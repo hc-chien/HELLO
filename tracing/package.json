@@ -1,0 +1,19 @@
+{
+  "name": "tracing",
+  "version": "0.0.1",
+  "description": "",
+  "main": "a.js",
+  "dependencies": {
+    "elastic-apm-node-opentracing": "^1.1.0",
+    "elastic-apm-node": "^2.9.0",
+    "jaeger-client": "^3.14.4",
+    "opentracing": "^0.14.3",
+    "skyapm-nodejs": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
