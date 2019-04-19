@@ -27,7 +27,8 @@ var config = {
 };
 var options = {
   tags: {
-    'my-awesome-service.version': '1.1.2',
+    'name': 'good',
+    'version': '1.1.0',
   },
   metrics: null,
   logger: {
@@ -40,32 +41,51 @@ var options = {
   }
 };
 var tracer = initTracer(config, options);
-console.log(tracer);
+// console.log(tracer);
 
-console.log('aaa');
+// console.log('aaa');
 
-/*
-const span = tracer.startSpan('debug');
- span.setTag(opentracing.Tags.SAMPLING_PRIORITY, 1);
- span.setTag(opentracing.Tags.ERROR, true);
- span.log({'event': 'error'});
- span.finish();
- tracer.close()
-
-console.log('aaa');
-*/
-
-const parentSpan = tracer.startSpan('test')
+const parentSpan = tracer.startSpan('this is a dog')
 parentSpan.addTags({ level: 0 })
+parentSpan.addTags({ gglevel: 0 })
 
 const child = tracer.startSpan('child_span', { childOf: parentSpan })
 child.setTag('alpha', '200')
 child.setTag('beta', '50')
 child.log({state: 'waiting'})
+var child2;
 
 setTimeout(() => {
   child.log({state: 'done'})
   child.finish()
+  child2 = tracer.startSpan('child2_span', { childOf: parentSpan })
+}, 100)
+
+setTimeout(() => {
+  child2.log({state: 'done'})
+  child2.finish()
   parentSpan.finish()
   tracer.close()
-}, 500)
+
+config = {
+  serviceName: 'gg2-service',
+  sampler: {
+    type: 'const',
+    param: 1,
+    refreshIntervalMs: 500
+  }
+}
+options = {
+  ip: ''
+}
+tracer2 = initTracer(config, options);
+parentSpan2 = tracer2.startSpan('this is a dog2', { childOf: parentSpan })
+parentSpan2.addTags({ level: 1 })
+parentSpan2.addTags({ gglevel: 1 })
+}, 200)
+
+
+setTimeout(() => {
+parentSpan2.finish()
+tracer2.close()
+}, 300)
