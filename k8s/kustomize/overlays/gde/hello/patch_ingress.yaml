@@ -1,0 +1,6 @@
+- op: replace
+  path: /data/34224
+  value: "hello/fluentd:34224"
+- op: replace
+  path: /metadata/namespace
+  value: "ingress-nginx"

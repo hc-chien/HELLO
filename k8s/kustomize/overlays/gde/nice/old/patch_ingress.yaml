@@ -1,0 +1,3 @@
+- op: replace
+  path: /data/34225
+  value: "hello/fluentd:34224"

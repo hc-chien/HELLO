@@ -1,0 +1,72 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitor
+---
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: fluentd
+  namespace: monitor
+  labels:
+    k8s-app: fluentd-logging
+    version: v1
+    kubernetes.io/cluster-service: "true"
+    app: fluentd
+spec:
+  updateStrategy:
+    type: RollingUpdate
+  minReadySeconds: 15
+  template:
+    metadata:
+      labels:
+        k8s-app: fluentd-logging
+        version: v1
+        kubernetes.io/cluster-service: "true"
+        app: fluentd
+    spec:
+      serviceAccount: fluentd
+      serviceAccountName: fluentd
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      containers:
+      - name: fluentd
+        image: dockerhub.pentium.network/master/pentium-fluentd:0.86.20190416195707
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 2000m
+        envFrom:
+        - configMapRef:
+            name: host-info
+        env:
+        - name: FLUENTD_ELASTICSEARCH_IP
+          valueFrom:
+              fieldpath: data01
+        ports:
+        - containerPort: 24224
+        volumeMounts:
+        - mountPath: /fluentd/etc/certs
+          name: pn-fluentd-certs-config
+        - mountPath: /etc/localtime
+          name: time
+        - name: varlibdockercontainers
+          mountPath: /var/lib/docker/containers
+          readOnly: true
+        - name: varlog
+          mountPath: /var/log
+      volumes:
+      - name: pn-fluentd-certs-config
+        hostPath:
+          path: /opt/fluentd/data/certs
+      - name: time
+        hostPath:
+          path: /etc/localtime
+      - name: varlibdockercontainers
+        hostPath:
+          path: /var/lib/docker/containers
+      - name: varlog
+        hostPath:
+          path: /var/log

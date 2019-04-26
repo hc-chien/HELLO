@@ -1,0 +1,43 @@
+# see: https://github.com/kubernetes-sigs/kustomize/blob/master/docs/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# namespace: hello
+# commonLabels:
+#   app: fluentd
+
+resources:
+- k8s-monitor-daemonset.yaml
+# - namespace.yaml
+#  - k.yaml
+
+images:
+- name: dockerhub.pentium.network/master/pentium-fluentd
+  newName: dockerhub.pentium.network/dev/pentium-fluentd
+  newTag: 1.1.16
+
+configMapGenerator:
+- name: fluentd-env
+  files:
+  - env.txt
+- name: tcp-services
+  namespace: ingress-nginx
+  literals:
+  - 34224="hello/fluentd:34224"
+  behavior: replace
+
+vars:
+- fieldref:
+    fieldPath: metadata.namespace
+  name: SERVICEACCOUNT_NAMESPACE
+  objref:
+    apiVersion: v1
+    kind: ServiceAccount
+    name: fluentd
+
+patchesJson6902:
+- target:
+   version: v1
+   kind: Namespace
+   name: monitor
+  path: patch_namespace.yaml

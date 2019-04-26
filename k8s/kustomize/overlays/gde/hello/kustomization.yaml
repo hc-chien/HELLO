@@ -1,0 +1,43 @@
+namespace: hello
+
+bases:
+  - ../../../base/monitor
+
+images:
+- name: dockerhub.pentium.network/master/pentium-fluentd
+  newName: dockerhub.pentium.network/dev/pentium-fluentd
+  newTag: 1.1.16
+
+configMapGenerator:
+- name: fluentd-env
+  files:
+  - env.txt
+
+patchesJson6902:
+- target:
+   group: rbac.authorization.k8s.io
+   version: v1
+   kind: ClusterRoleBinding
+   name: fluentd
+  path: patch_namespace.yaml
+- target:
+   version: v1
+   kind: Namespace
+   name: monitor
+  path: patch_namespace.yaml
+- target:
+   version: v1
+   kind: ConfigMap
+   name: tcp-services
+   namespace: hello
+  path: patch_ingress.yaml
+
+#vars:
+#- name: SERVICEACCOUNT_NAMESPACE
+#  objref:
+#   apiVersion: v1
+#   kind: ServiceAccount
+#   name: fluentd
+#  fieldref:
+#   fieldPath: metadata.namespace
+
