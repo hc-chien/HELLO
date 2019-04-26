@@ -6,6 +6,10 @@ configMapGenerator:
 - name: host-info
   literals:	
   - data01=192.168.89.95
+configMapGenerator:
+- name: fluentd-env
+  files:
+  - env.txt
 
 generatorOptions:
   disableNameSuffixHash: true

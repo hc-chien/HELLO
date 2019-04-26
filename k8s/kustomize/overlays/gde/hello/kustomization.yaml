@@ -10,6 +10,7 @@ images:
 
 configMapGenerator:
 - name: fluentd-env
+  behavior: replace
   files:
   - env.txt
 
