@@ -1,3 +1,11 @@
 # see: https://github.com/kubernetes-sigs/kustomize/blob/master/docs/kustomization.yaml
 resources:
 - k8s-monitor-daemonset.yaml
+
+configMapGenerator:
+- name: host-info
+  literals:	
+  - data01=192.168.89.95
+
+generatorOptions:
+  disableNameSuffixHash: true
