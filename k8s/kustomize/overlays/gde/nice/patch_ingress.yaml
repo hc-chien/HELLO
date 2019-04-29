@@ -1,5 +1,5 @@
 - op: replace
-  path: /data/34224
+  path: /data/34226
   value: "nice/fluentd:34224"
 - op: replace
   path: /metadata/namespace

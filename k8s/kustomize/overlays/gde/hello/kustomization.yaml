@@ -7,8 +7,8 @@ bases:
 
 images:
 - name: dockerhub.pentium.network/master/pentium-fluentd
-  newName: dockerhub.pentium.network/dev/pentium-fluentd
-  newTag: 1.1.16
+  newName: dockerhub.pentium.network/gde/pentium-fluentd
+  newTag: 1.1.7
 
 configMapGenerator:
 - name: fluentd-env
