@@ -6,21 +6,17 @@ configMapGenerator:
 - name: host-info
   literals:	
   - data01=192.168.89.95
+
 configMapGenerator:
 - name: fluentd-env
   files:
   - env.txt
+
 secretGenerator:
 - name: fluentd-certs
-  kvSources:
-  - name: files
-    pluginType: builtin
-    args:
-    - certs/fluentd.crt
-    - certs/fluentd.key
-#  files:
-#    - certs/fluentd.crt
-#    - certs/fluentd.key
+  files:
+  - certs/fluentd.crt
+  - certs/fluentd.key
 
 generatorOptions:
   disableNameSuffixHash: true
