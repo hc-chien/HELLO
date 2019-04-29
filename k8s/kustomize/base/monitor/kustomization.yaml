@@ -11,12 +11,26 @@ configMapGenerator:
 - name: fluentd-env
   files:
   - env.txt
+#- name: fluentd-certs
+#  files:
+#  - certs/fluentd.crt
+#  - certs/fluentd.key
 
-secretGenerator:
-- name: fluentd-certs
-  files:
-  - certs/fluentd.crt
-  - certs/fluentd.key
+#
+# argoCD 的 kustomize 版本還不支援 files
+#
+# secretGenerator:
+# - name: fluentd-certs
+#   files:
+#   - certs/fluentd.crt
+#   - certs/fluentd.key
+
+patchesJson6902:
+- target:
+   version: v1
+   kind: Secret 
+   name: fluentd-certs
+  path: patch_certs.yaml
 
 generatorOptions:
   disableNameSuffixHash: true

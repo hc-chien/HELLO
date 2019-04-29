@@ -400,3 +400,12 @@ rules:
   - get
   - list
   - watch
+---
+kind: Secret
+metadata:
+  name: fluentd-certs
+type: Opaque
+apiVersion: v1
+data:
+  fluentd.crt: aaa
+  fluentd.key: bbb
