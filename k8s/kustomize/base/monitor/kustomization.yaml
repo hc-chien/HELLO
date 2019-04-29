@@ -12,9 +12,15 @@ configMapGenerator:
   - env.txt
 secretGenerator:
 - name: fluentd-certs
-  files:
-  - certs/fluentd.crt
-  - certs/fluentd.key
+  kvSources:
+  - name: files
+    pluginType: builtin
+    args:
+    - certs/fluentd.crt
+    - certs/fluentd.key
+#  files:
+#    - certs/fluentd.crt
+#    - certs/fluentd.key
 
 generatorOptions:
   disableNameSuffixHash: true
