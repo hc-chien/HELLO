@@ -7,8 +7,7 @@ configMapGenerator:
   literals:	
   - data01=192.168.89.95
 - name: fluentd-env
-  files:
-  - env.txt
+  env: env.txt
 #- name: fluentd-certs
 #  files:
 #  - certs/fluentd.crt

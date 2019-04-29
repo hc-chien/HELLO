@@ -12,9 +12,10 @@ images:
 
 configMapGenerator:
 - name: fluentd-env
-  behavior: replace
-  files:
-  - env.txt
+  env: env.txt
+  behavior: merge
+#  files:
+#  - env.txt
 
 patchesJson6902:
 - target:
