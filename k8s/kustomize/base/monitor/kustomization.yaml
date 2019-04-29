@@ -10,6 +10,11 @@ configMapGenerator:
 - name: fluentd-env
   files:
   - env.txt
+secretGenerator:
+- name: fluentd-certs
+  files:
+  - certs/fluentd.crt
+  - certs/fluentd.key
 
 generatorOptions:
   disableNameSuffixHash: true

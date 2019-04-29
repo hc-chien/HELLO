@@ -351,8 +351,10 @@ spec:
           mountPath: /var/log
       volumes:
       - name: pn-fluentd-certs-config
-        hostPath:
-          path: /opt/fluentd/data/certs
+        secret:
+          secretName: fluentd-certs
+#        hostPath:
+#          path: /opt/fluentd/data/certs
       - name: time
         hostPath:
           path: /etc/localtime
