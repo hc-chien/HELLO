@@ -283,6 +283,8 @@ kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: fluentd
+  labels:
+    app.kubernetes.io/instance: generic-all-cluster
 roleRef:
   kind: ClusterRole
   name: fluentd
@@ -383,6 +385,8 @@ kind: ConfigMap
 metadata:
   name: tcp-services
   namespace: ingress-nginx
+  labels:
+    app.kubernetes.io/instance: generic-all-cluster
 data:
   34224: "monitor/fluentd:34224"
 ---
