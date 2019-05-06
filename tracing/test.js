@@ -15,7 +15,7 @@ var config = {
 //  reporter: {
     // Provide the traces endpoint; this forces the client to connect directly to the Collector and send
     // spans over HTTP
-//    collectorEndpoint: 'http://g1:16686/api/traces',
+    collectorEndpoint: 'http://g1:16686/api/traces',
     // Provide username and password if authentication is enabled in the Collector
     // username: '',
     // password: '',

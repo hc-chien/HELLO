@@ -10,13 +10,9 @@ var initTracer = require('jaeger-client').initTracerFromEnv;
 // See schema https://github.com/jaegertracing/jaeger-client-node/blob/master/src/configuration.js#L37
 var config = {
   serviceName: 'gg-service',
-  /*
   reporter: {
-    // Provide the traces endpoint; this forces the client to connect directly to the Collector and send
-    // spans over HTTP
     collectorEndpoint: 'http://jaeger-collector.tracing.svc.cluster.local:14268/api/traces',
   },
-  */
 
   // http://192.168.89.68:5778/sampling?service=asd
   sampler: {
