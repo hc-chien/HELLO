@@ -1,3 +1,6 @@
+kind: Kustomization
 bases:
+  - ../../base/rbac
+  - ingress-nginx
   - hello
   - nice

@@ -1,8 +1,8 @@
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: monitor
+#---
+#apiVersion: v1
+#kind: Namespace
+#metadata:
+#  name: monitor
 ---
 apiVersion: v1
 kind: Service
@@ -279,21 +279,6 @@ metadata:
   name: fluentd
   namespace: monitor
 ---
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: fluentd
-  labels:
-    app.kubernetes.io/instance: generic-all-cluster
-roleRef:
-  kind: ClusterRole
-  name: fluentd
-  apiGroup: rbac.authorization.k8s.io
-subjects:
-- kind: ServiceAccount
-  name: fluentd
-  namespace: monitor
----
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
@@ -379,31 +364,6 @@ spec:
   - protocol: TCP
     port: 34224
     targetPort: 24224
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: tcp-services
-  namespace: ingress-nginx
-  labels:
-    app.kubernetes.io/instance: generic-all-cluster
-data:
-  34224: "monitor/fluentd:34224"
----
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRole
-metadata:
-  name: fluentd
-rules:
-- apiGroups:
-  - ""
-  resources:
-  - pods
-  - namespaces
-  verbs:
-  - get
-  - list
-  - watch
 ---
 kind: Secret
 metadata:

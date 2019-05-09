@@ -1,0 +1,11 @@
+kind: Kustomization
+
+bases:
+  - ../../../base/ingress-nginx
+
+patchesJson6902:
+- target:
+   version: v1
+   kind: ConfigMap
+   name: tcp-services
+  path: patch_ingress.yaml

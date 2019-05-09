@@ -1,0 +1,6 @@
+- op: add
+  path: /data/34225
+  value: "hello/fluentd:34224"
+- op: add
+  path: /data/34226
+  value: "nice/fluentd:34224"
