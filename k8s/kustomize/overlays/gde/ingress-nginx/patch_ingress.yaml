@@ -1,4 +1,7 @@
 - op: add
+  path: /data/34224
+  value: "monitor/fluentd:34224"
+- op: add
   path: /data/34225
   value: "hello/fluentd:34224"
 - op: add
