@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: k8s/kustomize/base/monitor
+    path: k8s/kustomize/overlays/gde/monitor/
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: monitor
