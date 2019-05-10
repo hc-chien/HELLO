@@ -1,0 +1,20 @@
+kind: Kustomization
+
+bases:
+  - ../../../base/monitor
+
+resources:
+- namespace.yaml
+- clusterRoleBinding.yaml
+
+namespace: monitor
+
+images:
+- name: dockerhub.pentium.network/master/pentium-fluentd
+  newName: dockerhub.pentium.network/gde/pentium-fluentd
+  newTag: 1.1.7
+
+configMapGenerator:
+- name: fluentd-env
+  env: env.txt
+  behavior: merge
