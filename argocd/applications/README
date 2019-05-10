@@ -1,0 +1,8 @@
+see: https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/
+
+argocd app create applications \
+    --dest-namespace argocd \
+    --dest-server https://kubernetes.default.svc \
+    --repo https://github.com/hc-chien/HELLO.git \
+    --path /argocd/applications/ \
+    --sync-policy automated 
