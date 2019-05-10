@@ -2,6 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hello
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
@@ -10,4 +13,4 @@ spec:
     path: k8s/kustomize/overlays/gde/hello/
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: hello 
+    namespace: hello
