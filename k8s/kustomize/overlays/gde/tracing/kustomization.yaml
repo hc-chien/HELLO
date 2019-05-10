@@ -1,0 +1,10 @@
+kind: Kustomization
+
+bases:
+  - ../../../base/tracing
+
+configMapGenerator:
+- name: host-info
+  behavior: merge
+  literals:
+  - data01=192.168.89.95
