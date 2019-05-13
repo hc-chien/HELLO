@@ -9,10 +9,10 @@ resources:
 
 namespace: hello
 
-images:
-- name: dockerhub.pentium.network/master/pentium-fluentd
-  newName: dockerhub.pentium.network/gde/pentium-fluentd
-  newTag: dev
+#images:
+#- name: dockerhub.pentium.network/master/pentium-fluentd
+#  newName: dockerhub.pentium.network/gde/pentium-fluentd
+#  newTag: dev
 
 configMapGenerator:
 - name: fluentd-env
