@@ -173,6 +173,7 @@ items:
       port: 80
       protocol: TCP
       targetPort: 16686
+      nodePort: 31380 # 節點暴露的端口
     selector:
       app.kubernetes.io/name: jaeger
       app.kubernetes.io/component: query
