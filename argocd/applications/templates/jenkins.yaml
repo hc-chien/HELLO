@@ -1,0 +1,14 @@
+# see: https://github.com/argoproj/argoproj-deployments/blob/master/argoproj/base/jenkins.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins
+spec:
+  source:
+    path: {{ .Values.spec.jenkins.path }}
+    repoURL: {{ .Values.spec.jenkins.repoURL }}
+    targetRevision: {{ .Values.spec.jenkins.targetRevision }}
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: argocd
+  project: default

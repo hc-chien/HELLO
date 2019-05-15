@@ -4,3 +4,7 @@ spec:
   source:
     targetRevision: HEAD
     repoURL: https://github.com/hc-chien/HELLO.git
+  jenkins:
+    path: jenkins
+    targetRevision: HEAD
+    repoURL: https://github.com/argoproj/argoproj-deployments
