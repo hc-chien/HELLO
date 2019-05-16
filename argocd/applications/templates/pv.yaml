@@ -24,5 +24,84 @@ spec:
           values:
           - "true"
   persistentVolumeReclaimPolicy: Retain
-status:
-  phase: Released
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sentry
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: sentry
+    namespace: sentry
+  hostPath:
+    path: /var/lib/pnetwork/sentry
+    type: "DirectoryOrCreate"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: pn.storage.service
+          operator: In
+          values:
+          - "true"
+  persistentVolumeReclaimPolicy: Retain
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sentry-postgresql
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 8Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: sentry-postgresql
+    namespace: sentry
+  hostPath:
+    path: /var/lib/pnetwork/sentry-postgresql
+    type: "DirectoryOrCreate"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: pn.storage.service
+          operator: In
+          values:
+          - "true"
+  persistentVolumeReclaimPolicy: Retain
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sentry-redis
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 8Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: redis-data-sentry-redis-master-0
+    namespace: sentry
+  hostPath:
+    path: /var/lib/pnetwork/sentry-redis
+    type: "DirectoryOrCreate"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: pn.storage.service
+          operator: In
+          values:
+          - "true"
+  persistentVolumeReclaimPolicy: Retain
