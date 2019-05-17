@@ -14,9 +14,13 @@ sentry:
       storageClass: "example-nfs"
   persistence:
     storageClass: "example-nfs"
+  redis:
+    enabled: false
+    password: "good.job"
 redis:
   enabled: false
-  usePassword: false
+  password: "good.job"
+  usePassword: true
   cluster:
     enabled: false
   volumePermissions:
