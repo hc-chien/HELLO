@@ -1,3 +1,4 @@
+# helm template --namespace=sentry --name=sentry . > /tmp/sentry.yaml
 sentry:
   postgresql:
     enabled: true
@@ -17,8 +18,8 @@ sentry:
   redis:
     enabled: false
     password: "good.job"
-    # should be "{{.Release.Name}}-redis"
-    host: "sentry-redis"
+    # should be "{{.Release.Name}}-redis-master"
+    host: "sentry-redis-master"
 redis:
   enabled: false
   password: "good.job"
