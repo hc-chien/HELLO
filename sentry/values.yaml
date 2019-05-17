@@ -11,3 +11,11 @@ sentry:
     persistence:
       enabled: true 
       resourcePolicy: nil
+
+redis:
+  enabled: false
+  usePassword: false
+  cluster:
+    enabled: false
+  volumePermissions:
+    enabled: true
