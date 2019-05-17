@@ -17,6 +17,7 @@ sentry:
   redis:
     enabled: false
     password: "good.job"
+    # should be "{{.Release.Name}}-redis"
     host: "sentry-redis"
 redis:
   enabled: false
