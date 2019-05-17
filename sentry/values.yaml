@@ -22,6 +22,7 @@ sentry:
     password: "good.job"
     # should be "{{.Release.Name}}-redis-master"
     host: "sentry-redis-master"
+  sentrySecret: "good.job"
 redis:
   enabled: false
   password: "good.job"
