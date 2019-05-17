@@ -11,6 +11,9 @@ sentry:
     persistence:
       enabled: true 
       resourcePolicy: nil
+      storageClass: "example-nfs"
+  persistence:
+    storageClass: "example-nfs"
 
 redis:
   enabled: false
