@@ -6,13 +6,15 @@ sentry:
     postgresUser: sentry
     # Only used when internal PG is disabled
     # postgresHost: postgres
-    # postgresPassword: postgres
+    postgresPassword: "good.job"
     # postgresPort: 5432
     imageTag: "9.6"
     persistence:
       enabled: true 
       resourcePolicy: nil
       storageClass: "example-nfs"
+  user:
+    password: "good.job"
   persistence:
     storageClass: "example-nfs"
   redis:
