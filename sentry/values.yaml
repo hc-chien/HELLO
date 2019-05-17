@@ -14,7 +14,6 @@ sentry:
       storageClass: "example-nfs"
   persistence:
     storageClass: "example-nfs"
-
 redis:
   enabled: false
   usePassword: false
@@ -22,3 +21,6 @@ redis:
     enabled: false
   volumePermissions:
     enabled: true
+  master:
+    persistence:
+      storageClass: "example-nfs"
