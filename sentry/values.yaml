@@ -17,6 +17,7 @@ sentry:
   redis:
     enabled: false
     password: "good.job"
+    host: "sentry-redis"
 redis:
   enabled: false
   password: "good.job"
