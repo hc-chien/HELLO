@@ -1,0 +1,4 @@
+kind: Kustomization
+
+bases:
+  - ../../../base/sentry
