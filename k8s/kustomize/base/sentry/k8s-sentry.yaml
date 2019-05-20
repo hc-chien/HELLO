@@ -976,6 +976,9 @@ spec:
   serviceName: redis-headless
   template:
     metadata:
+      labels:
+        role: master
+        app: redis
       annotations:
         checksum/health: 730ae0dfd44153d6bb2eaf90e75fbe308d0a2c9c38d13b0da62c79e426997125
         checksum/configmap: fe7a4d1982d041bd399c36a9d46db20d0a9a2703aa2095bb79769fff42418027
