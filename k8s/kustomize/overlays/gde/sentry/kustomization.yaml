@@ -2,3 +2,7 @@ kind: Kustomization
 
 bases:
   - ../../../base/sentry
+
+images:
+  - name: sentry
+    newTag: "9.1"
