@@ -730,7 +730,7 @@ spec:
               name: sentry
               key: redis-password
         - name: SENTRY_REDIS_HOST
-          value: "sentry-redis-master"
+          value: "redis-master"
         - name: SENTRY_REDIS_PORT
           value: "6379"
         - name: SENTRY_EMAIL_HOST
@@ -812,7 +812,7 @@ spec:
               name: sentry
               key: redis-password
         - name: SENTRY_REDIS_HOST
-          value: "sentry-redis-master"
+          value: "redis-master"
         - name: SENTRY_REDIS_PORT
           value: "6379"
         - name: SENTRY_EMAIL_HOST
@@ -925,7 +925,7 @@ spec:
               name: sentry
               key: redis-password
         - name: SENTRY_REDIS_HOST
-          value: "sentry-redis-master"
+          value: "redis-master"
         - name: SENTRY_REDIS_PORT
           value: "6379"
         - name: SENTRY_EMAIL_HOST
@@ -1154,7 +1154,7 @@ spec:
               name: sentry
               key: redis-password
         - name: SENTRY_REDIS_HOST
-          value: "sentry-redis-master"
+          value: "redis-master"
         - name: SENTRY_REDIS_PORT
           value: "6379"
         - name: SENTRY_EMAIL_HOST
@@ -1234,7 +1234,7 @@ spec:
               name: sentry
               key: redis-password
         - name: SENTRY_REDIS_HOST
-          value: "sentry-redis-master"
+          value: "redis-master"
         - name: SENTRY_REDIS_PORT
           value: "6379"
         - name: SENTRY_EMAIL_HOST
