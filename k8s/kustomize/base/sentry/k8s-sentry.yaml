@@ -1115,8 +1115,8 @@ metadata:
     # "helm.sh/hook": post-install
     # "helm.sh/hook-delete-policy": "hook-succeeded,before-hook-creation"
     # "helm.sh/hook-weight": "-5"
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    argocd.argoproj.io/hook: PostSync
+    # argocd.argoproj.io/hook-delete-policy: "HookSucceeded,HookFailed"
 spec:
   template:
     metadata:
