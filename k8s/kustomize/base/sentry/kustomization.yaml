@@ -3,5 +3,14 @@ kind: Kustomization
 resources:
 - k8s-sentry.yaml
 
+configMapGenerator:
+- name: sentry-env
+  env: env.txt
+
+secretGenerator:
+- name: sentry-secret
+  env: secret.txt
+  type: Opaque
+
 generatorOptions:
   disableNameSuffixHash: true
