@@ -651,6 +651,11 @@ spec:
         app: sentry
         role: cron
     spec:
+      initContainers:
+      - name: init-myservice
+        image: busybox:latest
+        # use service port not container port
+        command: ['sh', '-c', 'until nc -v -z -w 1 sentry 9000 ; do echo waiting for sentry-web; sleep 2; done;']
       containers:
       - name: sentry-cron
         image: "sentry:9.0"
@@ -776,6 +781,11 @@ spec:
         app: sentry
         role: worker
     spec:
+      initContainers:
+      - name: init-myservice
+        image: busybox:latest
+        # use service port not container port
+        command: ['sh', '-c', 'until nc -v -z -w 1 sentry 9000 ; do echo waiting for sentry-web; sleep 2; done;']
       containers:
       - name: sentry-workers
         image: "sentry:9.0"
