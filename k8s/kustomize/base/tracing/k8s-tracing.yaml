@@ -145,6 +145,8 @@ items:
               path: "/"
               port: 16687
           env:
+          - name: QUERY_BASE_PATH
+            value: /tracing
           - name: SPAN_STORAGE_TYPE
             value: elasticsearch
           - name: ES_SERVER
@@ -173,12 +175,12 @@ items:
       port: 80
       protocol: TCP
       targetPort: 16686
-      nodePort: 31380 # 節點暴露的端口
+      # nodePort: 31380 # 節點暴露的端口
     selector:
       app.kubernetes.io/name: jaeger
       app.kubernetes.io/component: query
     type: NodePort
-#    type: LoadBalancer
+    type: LoadBalancer
 - apiVersion: extensions/v1beta1
   kind: DaemonSet
   metadata:
@@ -247,3 +249,22 @@ data:
         "param": 1
       }
     }
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pentium-jaeger-ingress
+  namespace: tracing
+spec:
+  rules:
+  - host: platformteam.pentium.network
+    http:
+      paths:
+      - backend:
+          serviceName: jaeger-query
+          servicePort: 80
+        path: /tracing
+  tls:
+  - hosts:
+    - platformteam.pentium.network
+    secretName: pentium-tls
