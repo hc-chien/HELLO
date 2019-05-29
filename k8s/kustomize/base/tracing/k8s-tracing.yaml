@@ -263,7 +263,7 @@ spec:
           serviceName: jaeger-query
           servicePort: 80
         path: /tracing
-  tls:
-  - hosts:
-    - host-name
-    secretName: pentium-tls
+#  tls:
+#  - hosts:
+#    - host-name
+#    secretName: pentium-tls
