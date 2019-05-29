@@ -16,3 +16,11 @@ configMapGenerator:
   behavior: merge
   literals:
   - data01=192.168.89.95
+
+patchesJson6902:
+- target:
+    group: extensions
+    version: v1beta1
+    kind: Ingress
+    name: pentium-jaeger-ingress
+  path: patch_ingress.json

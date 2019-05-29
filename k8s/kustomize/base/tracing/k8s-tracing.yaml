@@ -257,7 +257,7 @@ metadata:
   namespace: tracing
 spec:
   rules:
-  - host: platformteam.pentium.network
+  - host: host-name
     http:
       paths:
       - backend:
@@ -266,5 +266,5 @@ spec:
         path: /tracing
   tls:
   - hosts:
-    - platformteam.pentium.network
+    - host-name
     secretName: pentium-tls
