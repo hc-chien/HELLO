@@ -319,6 +319,11 @@ spec:
         - configMapRef:
             name: fluentd-env
         env:
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
         - name: FLUENTD_ELASTICSEARCH_IP
           valueFrom:
             configMapKeyRef:

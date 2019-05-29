@@ -14,13 +14,15 @@ images:
   newName: dockerhub.pentium.network/gde/pentium-fluentd
   newTag: dev
 
-configMapGenerator:
-- name: fluentd-env
-  env: env.txt
-  behavior: merge
+#configMapGenerator:
+#- name: fluentd-env
+#  env: env.txt
+#  behavior: merge
+
+#configMapGenerator:
+#- name: fluentd-env
 #  files:
 #  - env.txt
-
 
 #patchesJson6902:
 #- target:
