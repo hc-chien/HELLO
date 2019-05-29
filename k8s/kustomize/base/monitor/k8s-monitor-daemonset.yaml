@@ -313,9 +313,9 @@ spec:
         resources:
           limits:
             cpu: 200m
-        envFrom:
-        - configMapRef:
-            name: host-info
+        #envFrom:
+        #- configMapRef:
+            #name: host-info
         env:
         - name: POD_NAMESPACE
           valueFrom:
