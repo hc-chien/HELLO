@@ -329,6 +329,18 @@ spec:
             configMapKeyRef:
               name: host-info
               key: data01
+        - name: FLUENTD_ELASTICSEARCH_PORT
+          value: "9200"
+        - name: FLUENTD_CONTAINERS_LOG_PATH
+          value: /var/log/containers/*$(POD_NAMESPACE)-openfaas-fn*.log,/var/log/containers/*$(POD_NAMESPACE)_ofsm-runner-*.log,/var/log/containers/*$(POD_NAMESPACE)_scripts-runner-*.log,/var/log/containers/*$(POD_NAMESPACE)_scripts-service-*.log,/var/log/containers/*$(POD_NAMESPACE)_workflows-eventhandler-*.log
+        - name: FLUENTD_CONTAINERS_POS_FILE
+          value: /var/log/fluentd-containers-$(POD_NAMESPACE).log.pos
+        - name: FLUENTD_KAFKA_BROKERS
+          value: kafka-0.kafka-svc:9092,kafka-1.kafka-svc:9092,kafka-2.kafka-svc:9092
+        - name: FLUENTD_SCRIPTS_SERVICE_ENDPOINT_URL
+          value: http://scripts-service.$(POD_NAMESPACE).svc.cluster.local/scripts/deployments
+        - name: FLUENTD_WEBHOOKS_SYNCHRONIZATION_ENDPOINT_URL
+          value: http://router.$(POD_NAMESPACE).svc.cluster.local/api/hosts/webhooks/synchronization
         ports:
         - containerPort: 24224
         volumeMounts:
