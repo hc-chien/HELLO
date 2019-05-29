@@ -316,8 +316,6 @@ spec:
         envFrom:
         - configMapRef:
             name: host-info
-        - configMapRef:
-            name: fluentd-env
         env:
         - name: POD_NAMESPACE
           valueFrom:
