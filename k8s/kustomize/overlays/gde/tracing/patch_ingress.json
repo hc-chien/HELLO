@@ -1,0 +1,4 @@
+[
+	{"op": "replace", "path": "/spec/rules/0/host", "value": "platformteam.pentium.network"},
+    {"op": "replace", "path": "/spec/tls/0/hosts", "value": "platformteam.pentium.network"}
+]
