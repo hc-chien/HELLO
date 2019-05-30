@@ -1,15 +1,23 @@
 l=`kubectl get deploy  -o yaml | egrep -A1 node | grep image | cut -f3 -d '/' | cut -f 1 -d ':'`
+mkdir tmp
 for i in $l
 do
+	rm -rf $i
 	echo "creating \"$i\" ..."
 	if [ ! -d $i ]; then
         mkdir $i
     fi
 
-	cat <<EOF > $i/kustomization.yaml
+#	rm $i/faas.yaml
+#    ln "faas.yaml" $i
+
+	cat <<EOF > tmp/kustomization.yaml
 kind: Kustomization
 bases:
 - ../__basic
+
+#resources:
+#- faas.yaml
 
 generatorOptions:
   disableNameSuffixHash: true
@@ -28,7 +36,7 @@ patchesJson6902:
   path: patch.json
 EOF
 
-	cat <<EOF > $i/patch.json
+	cat <<EOF > tmp/patch.json
 [
 	{"op": "replace", "path": "/metadata/labels", "value": "$i"},
 	{"op": "replace", "path": "/metadata/name", "value": "$i"},
@@ -40,4 +48,10 @@ EOF
 	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "$i-projected-secrets"}
 ]
 EOF
+
+cd tmp; kustomize build > ../$i/faas.yaml; cd ..
+cp __basic/kustomization.yaml $i/
+
 done
+
+rm -rf tmp

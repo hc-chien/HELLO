@@ -1,19 +1,7 @@
+# see: https://github.com/kubernetes-sigs/kustomize/blob/master/docs/kustomization.yaml
 kind: Kustomization
-bases:
-- ../__basic
+resources:
+- faas.yaml
 
 generatorOptions:
   disableNameSuffixHash: true
-
-images:
-- name: __IMAGE
-  newName: dockerhub.pentium.network/jhow-gde/querydomains
-  newTag: 1.0.0
-
-patchesJson6902:
-- target:
-    group: extensions
-    version: v1beta1
-    kind: Deployment
-    name: __FUNC_NAME
-  path: patch.json

@@ -1,0 +1,80 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels: querytools
+  name: querytools
+  namespace: jhow-liu-openfaas-fn
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      faas_function: querytools
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io.scrape: "false"
+      creationTimestamp: null
+      labels: querytools
+      name: querytools
+    spec:
+      containers:
+      - env:
+        - name: fprocess
+          value: node index.js
+        image: dockerhub.pentium.network/jhow-gde/querytools:1.0.0
+        imagePullPolicy: Always
+        livenessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/.lock
+          failureThreshold: 3
+          initialDelaySeconds: 3
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: querytools
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/.lock
+          failureThreshold: 3
+          initialDelaySeconds: 3
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources: {}
+        securityContext:
+          procMount: Default
+          readOnlyRootFilesystem: false
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/openfaas/secrets
+          name: querytools-projected-secrets
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: querytools-projected-secrets
+        projected:
+          defaultMode: 420
+          sources:
+          - secret:
+              items:
+              - key: config.json
+                path: config.json
+              name: pn-faas-secret
