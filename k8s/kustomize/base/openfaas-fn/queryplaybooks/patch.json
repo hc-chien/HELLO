@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "queryplaybooks"},
+	{"op": "replace", "path": "/metadata/name", "value": "queryplaybooks"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "queryplaybooks"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "queryplaybooks"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "queryplaybooks"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "queryplaybooks"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "queryplaybooks-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "queryplaybooks-projected-secrets"}
+]

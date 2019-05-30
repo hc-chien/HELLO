@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "commandauths"},
+	{"op": "replace", "path": "/metadata/name", "value": "commandauths"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "commandauths"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "commandauths"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "commandauths"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "commandauths"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "commandauths-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "commandauths-projected-secrets"}
+]

@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "commandbotchannels"},
+	{"op": "replace", "path": "/metadata/name", "value": "commandbotchannels"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "commandbotchannels"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "commandbotchannels"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "commandbotchannels"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "commandbotchannels"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "commandbotchannels-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "commandbotchannels-projected-secrets"}
+]

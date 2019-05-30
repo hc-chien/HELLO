@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "commanddomains"},
+	{"op": "replace", "path": "/metadata/name", "value": "commanddomains"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "commanddomains"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "commanddomains"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "commanddomains"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "commanddomains"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "commanddomains-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "commanddomains-projected-secrets"}
+]

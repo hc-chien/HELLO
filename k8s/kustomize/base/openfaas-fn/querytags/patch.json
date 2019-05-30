@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "querytags"},
+	{"op": "replace", "path": "/metadata/name", "value": "querytags"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "querytags"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "querytags"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "querytags"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "querytags"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "querytags-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "querytags-projected-secrets"}
+]

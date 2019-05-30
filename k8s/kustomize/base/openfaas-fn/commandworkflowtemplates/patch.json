@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "commandworkflowtemplates"},
+	{"op": "replace", "path": "/metadata/name", "value": "commandworkflowtemplates"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "commandworkflowtemplates"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "commandworkflowtemplates"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "commandworkflowtemplates"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "commandworkflowtemplates"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "commandworkflowtemplates-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "commandworkflowtemplates-projected-secrets"}
+]

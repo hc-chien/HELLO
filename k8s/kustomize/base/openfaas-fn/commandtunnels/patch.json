@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "commandtunnels"},
+	{"op": "replace", "path": "/metadata/name", "value": "commandtunnels"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "commandtunnels"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "commandtunnels"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "commandtunnels"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "commandtunnels"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "commandtunnels-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "commandtunnels-projected-secrets"}
+]

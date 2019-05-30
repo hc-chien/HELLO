@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "querycloudproviders"},
+	{"op": "replace", "path": "/metadata/name", "value": "querycloudproviders"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "querycloudproviders"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "querycloudproviders"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "querycloudproviders"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "querycloudproviders"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "querycloudproviders-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "querycloudproviders-projected-secrets"}
+]

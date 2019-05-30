@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "commandcloudtools"},
+	{"op": "replace", "path": "/metadata/name", "value": "commandcloudtools"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "commandcloudtools"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "commandcloudtools"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "commandcloudtools"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "commandcloudtools"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "commandcloudtools-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "commandcloudtools-projected-secrets"}
+]

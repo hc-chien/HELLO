@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "commandcallbackfailure"},
+	{"op": "replace", "path": "/metadata/name", "value": "commandcallbackfailure"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "commandcallbackfailure"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "commandcallbackfailure"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "commandcallbackfailure"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "commandcallbackfailure"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "commandcallbackfailure-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "commandcallbackfailure-projected-secrets"}
+]

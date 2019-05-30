@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "commandprojects"},
+	{"op": "replace", "path": "/metadata/name", "value": "commandprojects"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "commandprojects"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "commandprojects"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "commandprojects"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "commandprojects"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "commandprojects-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "commandprojects-projected-secrets"}
+]

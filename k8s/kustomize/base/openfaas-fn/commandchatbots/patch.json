@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "commandchatbots"},
+	{"op": "replace", "path": "/metadata/name", "value": "commandchatbots"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "commandchatbots"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "commandchatbots"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "commandchatbots"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "commandchatbots"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "commandchatbots-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "commandchatbots-projected-secrets"}
+]

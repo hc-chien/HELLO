@@ -1,0 +1,10 @@
+[
+	{"op": "replace", "path": "/metadata/labels", "value": "querydomainresolvers"},
+	{"op": "replace", "path": "/metadata/name", "value": "querydomainresolvers"},
+	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "querydomainresolvers"},
+	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "querydomainresolvers"},
+	{"op": "replace", "path": "/spec/template/metadata/name", "value": "querydomainresolvers"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "querydomainresolvers"},
+	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "querydomainresolvers-projected-secrets"},
+	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "querydomainresolvers-projected-secrets"}
+]
