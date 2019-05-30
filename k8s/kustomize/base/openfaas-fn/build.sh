@@ -1,4 +1,7 @@
-l=`kubectl get deploy  -o yaml | egrep -A1 node | grep image | cut -f3 -d '/' | cut -f 1 -d ':'`
+#!/usr/bin/env sh
+# l=`kubectl get deploy  -o yaml | egrep -A1 node | grep image | cut -f3 -d '/' | cut -f 1 -d ':'`
+l=`cat func_list.txt`
+
 mkdir tmp
 for i in $l
 do
