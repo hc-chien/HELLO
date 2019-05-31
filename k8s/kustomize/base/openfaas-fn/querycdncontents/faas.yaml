@@ -40,10 +40,7 @@ spec:
       name: querycdncontents
     spec:
       containers:
-      - env:
-        - name: fprocess
-          value: node index.js
-        image: dockerhub.pentium.network/jhow-gde/querycdncontents:1.0.0
+      - image: dockerhub.pentium.network/jhow-gde/querycdncontents:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

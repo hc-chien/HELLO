@@ -26,10 +26,7 @@ spec:
       name: __FUNC_NAME
     spec:
       containers:
-      - env:
-        - name: fprocess
-          value: node index.js
-        image: __IMAGE
+      - image: __IMAGE
         imagePullPolicy: Always
         livenessProbe:
           exec:

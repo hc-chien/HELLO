@@ -40,10 +40,7 @@ spec:
       name: commandaccounts
     spec:
       containers:
-      - env:
-        - name: fprocess
-          value: node index.js
-        image: dockerhub.pentium.network/jhow-gde/commandaccounts:1.0.0
+      - image: dockerhub.pentium.network/jhow-gde/commandaccounts:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

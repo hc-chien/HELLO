@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 # l=`kubectl get deploy  -o yaml | egrep -A1 node | grep image | cut -f3 -d '/' | cut -f 1 -d ':'`
+# kubectl get deploy  -o yaml | grep image | grep -v Pull | cut -f 2 -d : | sed "s/.*\///g"`
 l=`cat func_list.txt`
 
 mkdir tmp
