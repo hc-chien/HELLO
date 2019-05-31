@@ -2,6 +2,7 @@ kind: Kustomization
 
 bases:
   - ../../../base/monitor
+  - ../openfaas-fn
 
 resources:
 - namespace.yaml
