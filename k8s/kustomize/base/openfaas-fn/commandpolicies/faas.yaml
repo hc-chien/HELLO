@@ -1,3 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: commandpolicies
+  namespace: jhow-liu-openfaas-fn
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    faas_function: commandpolicies
+  sessionAffinity: None
+  type: ClusterIP
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:

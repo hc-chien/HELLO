@@ -36,10 +36,15 @@ patchesJson6902:
     version: v1beta1
     kind: Deployment
     name: __FUNC_NAME
-  path: patch.json
+  path: patchDeployment.json
+- target:
+    version: v1
+    kind: Service
+    name: __FUNC_NAME
+  path: patchService.json
 EOF
 
-	cat <<EOF > tmp/patch.json
+	cat <<EOF > tmp/patchDeployment.json
 [
 	{"op": "replace", "path": "/metadata/labels", "value": "$i"},
 	{"op": "replace", "path": "/metadata/name", "value": "$i"},
@@ -49,6 +54,13 @@ EOF
 	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "$i"},
 	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "$i-projected-secrets"},
 	{"op": "replace", "path": "/spec/template/spec/volumes/0/name", "value": "$i-projected-secrets"}
+]
+EOF
+
+	cat <<EOF > tmp/patchService.json
+[
+	{"op": "replace", "path": "/metadata/name", "value": "$i"},
+	{"op": "replace", "path": "/spec/selector/faas_function", "value": "$i"}
 ]
 EOF
 
