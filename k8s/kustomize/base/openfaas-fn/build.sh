@@ -47,7 +47,7 @@ EOF
 
 	cat <<EOF > tmp/patchDeployment.json
 [
-	{"op": "replace", "path": "/metadata/labels", "value": "$i"},
+	{"op": "replace", "path": "/metadata/labels/faas_function", "value": "$i"},
 	{"op": "replace", "path": "/metadata/name", "value": "$i"},
 	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "$i"},
 	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "$i"},

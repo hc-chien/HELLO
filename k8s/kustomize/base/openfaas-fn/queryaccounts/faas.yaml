@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: queryaccounts
+  labels:
+    faas_function: queryaccounts
   name: queryaccounts
   namespace: jhow-liu-openfaas-fn
 spec:

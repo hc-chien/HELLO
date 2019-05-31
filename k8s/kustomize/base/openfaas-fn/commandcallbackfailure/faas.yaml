@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandcallbackfailure
+  labels:
+    faas_function: commandcallbackfailure
   name: commandcallbackfailure
   namespace: jhow-liu-openfaas-fn
 spec:

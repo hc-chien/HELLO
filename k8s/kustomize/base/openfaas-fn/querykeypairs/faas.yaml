@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: querykeypairs
+  labels:
+    faas_function: querykeypairs
   name: querykeypairs
   namespace: jhow-liu-openfaas-fn
 spec:

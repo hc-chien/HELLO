@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandtunnels
+  labels:
+    faas_function: commandtunnels
   name: commandtunnels
   namespace: jhow-liu-openfaas-fn
 spec:

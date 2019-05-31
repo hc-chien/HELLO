@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandworkflows
+  labels:
+    faas_function: commandworkflows
   name: commandworkflows
   namespace: jhow-liu-openfaas-fn
 spec:

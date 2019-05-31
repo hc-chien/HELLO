@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandcdncontents
+  labels:
+    faas_function: commandcdncontents
   name: commandcdncontents
   namespace: jhow-liu-openfaas-fn
 spec:

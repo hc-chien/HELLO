@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandchatbots
+  labels:
+    faas_function: commandchatbots
   name: commandchatbots
   namespace: jhow-liu-openfaas-fn
 spec:

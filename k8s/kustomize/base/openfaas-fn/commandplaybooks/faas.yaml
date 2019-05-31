@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandplaybooks
+  labels:
+    faas_function: commandplaybooks
   name: commandplaybooks
   namespace: jhow-liu-openfaas-fn
 spec:

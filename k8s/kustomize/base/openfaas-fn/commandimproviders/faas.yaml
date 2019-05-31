@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandimproviders
+  labels:
+    faas_function: commandimproviders
   name: commandimproviders
   namespace: jhow-liu-openfaas-fn
 spec:

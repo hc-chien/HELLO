@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandcloudproviders
+  labels:
+    faas_function: commandcloudproviders
   name: commandcloudproviders
   namespace: jhow-liu-openfaas-fn
 spec:

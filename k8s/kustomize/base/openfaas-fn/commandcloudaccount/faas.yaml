@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandcloudaccount
+  labels:
+    faas_function: commandcloudaccount
   name: commandcloudaccount
   namespace: jhow-liu-openfaas-fn
 spec:

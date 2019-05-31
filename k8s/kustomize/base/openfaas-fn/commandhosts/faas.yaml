@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandhosts
+  labels:
+    faas_function: commandhosts
   name: commandhosts
   namespace: jhow-liu-openfaas-fn
 spec:

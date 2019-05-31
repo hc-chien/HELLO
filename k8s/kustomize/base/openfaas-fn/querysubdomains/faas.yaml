@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: querysubdomains
+  labels:
+    faas_function: querysubdomains
   name: querysubdomains
   namespace: jhow-liu-openfaas-fn
 spec:

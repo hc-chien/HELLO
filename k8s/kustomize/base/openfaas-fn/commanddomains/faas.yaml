@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commanddomains
+  labels:
+    faas_function: commanddomains
   name: commanddomains
   namespace: jhow-liu-openfaas-fn
 spec:

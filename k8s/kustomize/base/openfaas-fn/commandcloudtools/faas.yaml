@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandcloudtools
+  labels:
+    faas_function: commandcloudtools
   name: commandcloudtools
   namespace: jhow-liu-openfaas-fn
 spec:

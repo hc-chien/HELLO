@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: querydomainresolvers
+  labels:
+    faas_function: querydomainresolvers
   name: querydomainresolvers
   namespace: jhow-liu-openfaas-fn
 spec:

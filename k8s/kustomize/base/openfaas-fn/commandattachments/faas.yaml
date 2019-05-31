@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandattachments
+  labels:
+    faas_function: commandattachments
   name: commandattachments
   namespace: jhow-liu-openfaas-fn
 spec:

@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: queryprojects
+  labels:
+    faas_function: queryprojects
   name: queryprojects
   namespace: jhow-liu-openfaas-fn
 spec:

@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandchannels
+  labels:
+    faas_function: commandchannels
   name: commandchannels
   namespace: jhow-liu-openfaas-fn
 spec:

@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandkms
+  labels:
+    faas_function: commandkms
   name: commandkms
   namespace: jhow-liu-openfaas-fn
 spec:

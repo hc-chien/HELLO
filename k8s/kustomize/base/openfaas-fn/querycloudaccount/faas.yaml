@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: querycloudaccount
+  labels:
+    faas_function: querycloudaccount
   name: querycloudaccount
   namespace: jhow-liu-openfaas-fn
 spec:

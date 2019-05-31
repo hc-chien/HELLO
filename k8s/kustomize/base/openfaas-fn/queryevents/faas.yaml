@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: queryevents
+  labels:
+    faas_function: queryevents
   name: queryevents
   namespace: jhow-liu-openfaas-fn
 spec:

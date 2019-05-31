@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: querywebsshlogs
+  labels:
+    faas_function: querywebsshlogs
   name: querywebsshlogs
   namespace: jhow-liu-openfaas-fn
 spec:

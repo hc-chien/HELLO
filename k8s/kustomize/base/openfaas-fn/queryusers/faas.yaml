@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: queryusers
+  labels:
+    faas_function: queryusers
   name: queryusers
   namespace: jhow-liu-openfaas-fn
 spec:

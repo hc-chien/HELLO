@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: queryimproviders
+  labels:
+    faas_function: queryimproviders
   name: queryimproviders
   namespace: jhow-liu-openfaas-fn
 spec:

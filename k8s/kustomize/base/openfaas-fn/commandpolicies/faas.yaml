@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commandpolicies
+  labels:
+    faas_function: commandpolicies
   name: commandpolicies
   namespace: jhow-liu-openfaas-fn
 spec:

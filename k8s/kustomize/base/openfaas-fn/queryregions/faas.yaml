@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: queryregions
+  labels:
+    faas_function: queryregions
   name: queryregions
   namespace: jhow-liu-openfaas-fn
 spec:

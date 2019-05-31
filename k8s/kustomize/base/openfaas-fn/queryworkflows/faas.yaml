@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: queryworkflows
+  labels:
+    faas_function: queryworkflows
   name: queryworkflows
   namespace: jhow-liu-openfaas-fn
 spec:

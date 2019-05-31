@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: queryautocompletes
+  labels:
+    faas_function: queryautocompletes
   name: queryautocompletes
   namespace: jhow-liu-openfaas-fn
 spec:

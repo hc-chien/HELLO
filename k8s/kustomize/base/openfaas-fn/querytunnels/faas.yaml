@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: querytunnels
+  labels:
+    faas_function: querytunnels
   name: querytunnels
   namespace: jhow-liu-openfaas-fn
 spec:

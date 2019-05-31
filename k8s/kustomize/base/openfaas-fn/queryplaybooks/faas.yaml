@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: queryplaybooks
+  labels:
+    faas_function: queryplaybooks
   name: queryplaybooks
   namespace: jhow-liu-openfaas-fn
 spec:

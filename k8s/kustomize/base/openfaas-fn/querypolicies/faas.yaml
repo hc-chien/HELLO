@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: querypolicies
+  labels:
+    faas_function: querypolicies
   name: querypolicies
   namespace: jhow-liu-openfaas-fn
 spec:

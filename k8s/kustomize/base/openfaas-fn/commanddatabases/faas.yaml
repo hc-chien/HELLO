@@ -17,7 +17,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels: commanddatabases
+  labels:
+    faas_function: commanddatabases
   name: commanddatabases
   namespace: jhow-liu-openfaas-fn
 spec:
