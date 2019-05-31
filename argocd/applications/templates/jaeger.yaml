@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: k8s/kustomize/overlays/gde/tracing/
+    path: k8s/kustomize/overlays/gde/jaeger/
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: tracing

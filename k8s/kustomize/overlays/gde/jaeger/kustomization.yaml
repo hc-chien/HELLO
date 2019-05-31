@@ -1,7 +1,7 @@
 kind: Kustomization
 
 bases:
-  - ../../../base/tracing
+  - ../../../base/jaeger
 
 images:
   - name: jaegertracing/jaeger-collector
