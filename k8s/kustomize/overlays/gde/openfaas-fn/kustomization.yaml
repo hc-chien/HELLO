@@ -2,6 +2,13 @@ kind: Kustomization
 
 namespace: hello
 
+secretGenerator:
+- name: pn-faas-secret
+  behavior: create
+  files:
+  - config.json
+  type: Opaque
+
 bases:
   - ../../../base/openfaas-fn/commanddomains
   - ../../../base/openfaas-fn/querydatabases
