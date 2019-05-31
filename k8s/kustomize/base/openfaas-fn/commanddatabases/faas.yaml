@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commanddatabases
+      labels:
+        faas_function: commanddatabases
       name: commanddatabases
     spec:
       containers:

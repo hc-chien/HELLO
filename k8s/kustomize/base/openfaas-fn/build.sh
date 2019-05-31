@@ -50,7 +50,7 @@ EOF
 	{"op": "replace", "path": "/metadata/labels/faas_function", "value": "$i"},
 	{"op": "replace", "path": "/metadata/name", "value": "$i"},
 	{"op": "replace", "path": "/spec/selector/matchLabels/faas_function", "value": "$i"},
-	{"op": "replace", "path": "/spec/template/metadata/labels", "value": "$i"},
+	{"op": "replace", "path": "/spec/template/metadata/labels/faas_function", "value": "$i"},
 	{"op": "replace", "path": "/spec/template/metadata/name", "value": "$i"},
 	{"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "$i"},
 	{"op": "replace", "path": "/spec/template/spec/containers/0/volumeMounts/0/name", "value": "$i-projected-secrets"},

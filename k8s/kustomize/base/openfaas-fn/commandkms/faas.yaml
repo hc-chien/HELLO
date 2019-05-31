@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandkms
+      labels:
+        faas_function: commandkms
       name: commandkms
     spec:
       containers:

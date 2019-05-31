@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: querychatbots
+      labels:
+        faas_function: querychatbots
       name: querychatbots
     spec:
       containers:

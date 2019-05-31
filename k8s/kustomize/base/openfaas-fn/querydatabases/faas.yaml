@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: querydatabases
+      labels:
+        faas_function: querydatabases
       name: querydatabases
     spec:
       containers:

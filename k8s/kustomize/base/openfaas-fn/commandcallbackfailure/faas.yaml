@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandcallbackfailure
+      labels:
+        faas_function: commandcallbackfailure
       name: commandcallbackfailure
     spec:
       containers:

@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandcloudtools
+      labels:
+        faas_function: commandcloudtools
       name: commandcloudtools
     spec:
       containers:

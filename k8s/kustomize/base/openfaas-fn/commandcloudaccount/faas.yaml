@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandcloudaccount
+      labels:
+        faas_function: commandcloudaccount
       name: commandcloudaccount
     spec:
       containers:

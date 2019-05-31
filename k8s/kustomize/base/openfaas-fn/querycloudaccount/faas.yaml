@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: querycloudaccount
+      labels:
+        faas_function: querycloudaccount
       name: querycloudaccount
     spec:
       containers:

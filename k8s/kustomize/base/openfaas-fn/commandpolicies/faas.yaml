@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandpolicies
+      labels:
+        faas_function: commandpolicies
       name: commandpolicies
     spec:
       containers:

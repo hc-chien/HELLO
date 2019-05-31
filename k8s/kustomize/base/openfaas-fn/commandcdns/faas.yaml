@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandcdns
+      labels:
+        faas_function: commandcdns
       name: commandcdns
     spec:
       containers:

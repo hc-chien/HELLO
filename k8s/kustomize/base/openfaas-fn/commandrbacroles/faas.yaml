@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandrbacroles
+      labels:
+        faas_function: commandrbacroles
       name: commandrbacroles
     spec:
       containers:

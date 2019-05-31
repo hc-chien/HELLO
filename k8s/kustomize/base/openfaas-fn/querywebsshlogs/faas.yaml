@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: querywebsshlogs
+      labels:
+        faas_function: querywebsshlogs
       name: querywebsshlogs
     spec:
       containers:

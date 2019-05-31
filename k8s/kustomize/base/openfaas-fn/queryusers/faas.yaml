@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: queryusers
+      labels:
+        faas_function: queryusers
       name: queryusers
     spec:
       containers:

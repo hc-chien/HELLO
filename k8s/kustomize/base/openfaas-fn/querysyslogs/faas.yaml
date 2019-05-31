@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: querysyslogs
+      labels:
+        faas_function: querysyslogs
       name: querysyslogs
     spec:
       containers:

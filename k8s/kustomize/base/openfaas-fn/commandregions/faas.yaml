@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandregions
+      labels:
+        faas_function: commandregions
       name: commandregions
     spec:
       containers:

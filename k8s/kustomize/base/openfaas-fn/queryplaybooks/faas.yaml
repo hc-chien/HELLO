@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: queryplaybooks
+      labels:
+        faas_function: queryplaybooks
       name: queryplaybooks
     spec:
       containers:

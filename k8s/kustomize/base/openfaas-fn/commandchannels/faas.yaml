@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandchannels
+      labels:
+        faas_function: commandchannels
       name: commandchannels
     spec:
       containers:

@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandchatbots
+      labels:
+        faas_function: commandchatbots
       name: commandchatbots
     spec:
       containers:

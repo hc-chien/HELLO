@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: querycloudproviders
+      labels:
+        faas_function: querycloudproviders
       name: querycloudproviders
     spec:
       containers:

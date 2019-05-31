@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: queryplaybooklogs
+      labels:
+        faas_function: queryplaybooklogs
       name: queryplaybooklogs
     spec:
       containers:

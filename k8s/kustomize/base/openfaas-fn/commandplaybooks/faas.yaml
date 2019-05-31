@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandplaybooks
+      labels:
+        faas_function: commandplaybooks
       name: commandplaybooks
     spec:
       containers:

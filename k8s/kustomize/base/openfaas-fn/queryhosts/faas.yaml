@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: queryhosts
+      labels:
+        faas_function: queryhosts
       name: queryhosts
     spec:
       containers:

@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commanddomainresolvers
+      labels:
+        faas_function: commanddomainresolvers
       name: commanddomainresolvers
     spec:
       containers:

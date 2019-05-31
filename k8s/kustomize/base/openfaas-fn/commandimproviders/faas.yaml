@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandimproviders
+      labels:
+        faas_function: commandimproviders
       name: commandimproviders
     spec:
       containers:

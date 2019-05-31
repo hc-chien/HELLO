@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: queryevents
+      labels:
+        faas_function: queryevents
       name: queryevents
     spec:
       containers:

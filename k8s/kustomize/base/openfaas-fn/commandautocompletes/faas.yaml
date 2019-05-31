@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandautocompletes
+      labels:
+        faas_function: commandautocompletes
       name: commandautocompletes
     spec:
       containers:

@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: queryimproviders
+      labels:
+        faas_function: queryimproviders
       name: queryimproviders
     spec:
       containers:

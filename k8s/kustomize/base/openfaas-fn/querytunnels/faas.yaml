@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: querytunnels
+      labels:
+        faas_function: querytunnels
       name: querytunnels
     spec:
       containers:

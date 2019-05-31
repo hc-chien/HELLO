@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: queryrbacroles
+      labels:
+        faas_function: queryrbacroles
       name: queryrbacroles
     spec:
       containers:

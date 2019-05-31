@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandworkflowcontroller
+      labels:
+        faas_function: commandworkflowcontroller
       name: commandworkflowcontroller
     spec:
       containers:

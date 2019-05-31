@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: querycdns
+      labels:
+        faas_function: querycdns
       name: querycdns
     spec:
       containers:

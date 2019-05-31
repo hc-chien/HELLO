@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: queryworkflowtemplates
+      labels:
+        faas_function: queryworkflowtemplates
       name: queryworkflowtemplates
     spec:
       containers:

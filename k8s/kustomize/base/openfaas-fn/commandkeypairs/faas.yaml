@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandkeypairs
+      labels:
+        faas_function: commandkeypairs
       name: commandkeypairs
     spec:
       containers:

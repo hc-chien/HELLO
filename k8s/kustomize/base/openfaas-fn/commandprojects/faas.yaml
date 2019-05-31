@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandprojects
+      labels:
+        faas_function: commandprojects
       name: commandprojects
     spec:
       containers:

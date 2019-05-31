@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: querycdncontents
+      labels:
+        faas_function: querycdncontents
       name: querycdncontents
     spec:
       containers:

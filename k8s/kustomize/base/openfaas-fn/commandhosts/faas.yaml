@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandhosts
+      labels:
+        faas_function: commandhosts
       name: commandhosts
     spec:
       containers:

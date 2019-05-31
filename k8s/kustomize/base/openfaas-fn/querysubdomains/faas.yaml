@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: querysubdomains
+      labels:
+        faas_function: querysubdomains
       name: querysubdomains
     spec:
       containers:

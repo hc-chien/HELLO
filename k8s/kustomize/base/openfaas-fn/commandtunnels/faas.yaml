@@ -37,7 +37,8 @@ spec:
       annotations:
         prometheus.io.scrape: "false"
       creationTimestamp: null
-      labels: commandtunnels
+      labels:
+        faas_function: commandtunnels
       name: commandtunnels
     spec:
       containers:
