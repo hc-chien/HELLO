@@ -9,6 +9,20 @@ secretGenerator:
   - config.json
   type: Opaque
 
+images:
+- name: dockerhub.pentium.network/jhow-gde/commandauths
+  newTag: 1.1.0
+- name: dockerhub.pentium.network/jhow-gde/commandchatbots
+  newTag: 1.0.2
+- name: dockerhub.pentium.network/jhow-gde/commandcloudtools
+  newTag: 0.97.1.1559008867
+- name: dockerhub.pentium.network/jhow-gde/commandimproviders
+  newTag: 0.1.0
+- name: dockerhub.pentium.network/jhow-gde/querychatbots
+  newTag: 1.0.2
+- name: dockerhub.pentium.network/jhow-gde/queryimproviders
+  newTag: 0.1.0
+
 bases:
   - ../../../base/openfaas-fn/commanddomains
   - ../../../base/openfaas-fn/querydatabases
