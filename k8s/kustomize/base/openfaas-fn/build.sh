@@ -28,7 +28,7 @@ generatorOptions:
 
 images:
 - name: __IMAGE
-  newName: dockerhub.pentium.network/jhow-gde/$i
+  newName: __IMAGE/$i
   newTag: 1.0.0
 
 patchesJson6902:

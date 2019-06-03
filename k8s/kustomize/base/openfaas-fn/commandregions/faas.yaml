@@ -42,7 +42,7 @@ spec:
       name: commandregions
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/commandregions:1.0.0
+      - image: __IMAGE/commandregions:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

@@ -42,7 +42,7 @@ spec:
       name: querysyslogs
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/querysyslogs:1.0.0
+      - image: __IMAGE/querysyslogs:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

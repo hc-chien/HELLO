@@ -42,7 +42,7 @@ spec:
       name: commandchatbots
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/commandchatbots:1.0.0
+      - image: __IMAGE/commandchatbots:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

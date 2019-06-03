@@ -42,7 +42,7 @@ spec:
       name: commandcloudtools
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/commandcloudtools:1.0.0
+      - image: __IMAGE/commandcloudtools:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

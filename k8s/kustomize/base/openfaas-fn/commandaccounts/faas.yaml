@@ -42,7 +42,7 @@ spec:
       name: commandaccounts
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/commandaccounts:1.0.0
+      - image: __IMAGE/commandaccounts:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

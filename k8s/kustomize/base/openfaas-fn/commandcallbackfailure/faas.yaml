@@ -42,7 +42,7 @@ spec:
       name: commandcallbackfailure
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/commandcallbackfailure:1.0.0
+      - image: __IMAGE/commandcallbackfailure:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

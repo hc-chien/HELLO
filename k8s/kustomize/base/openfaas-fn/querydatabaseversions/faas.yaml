@@ -42,7 +42,7 @@ spec:
       name: querydatabaseversions
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/querydatabaseversions:1.0.0
+      - image: __IMAGE/querydatabaseversions:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

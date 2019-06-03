@@ -42,7 +42,7 @@ spec:
       name: querychannels
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/querychannels:1.0.0
+      - image: __IMAGE/querychannels:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

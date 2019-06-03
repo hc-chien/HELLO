@@ -42,7 +42,7 @@ spec:
       name: querycdncontents
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/querycdncontents:1.0.0
+      - image: __IMAGE/querycdncontents:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

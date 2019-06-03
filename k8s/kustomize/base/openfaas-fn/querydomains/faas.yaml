@@ -42,7 +42,7 @@ spec:
       name: querydomains
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/querydomains:1.0.0
+      - image: __IMAGE/querydomains:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

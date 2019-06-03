@@ -42,7 +42,7 @@ spec:
       name: queryevents
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/queryevents:1.0.0
+      - image: __IMAGE/queryevents:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

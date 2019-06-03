@@ -42,7 +42,7 @@ spec:
       name: queryusers
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/queryusers:1.0.0
+      - image: __IMAGE/queryusers:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

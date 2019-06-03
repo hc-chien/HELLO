@@ -42,7 +42,7 @@ spec:
       name: commandtunnels
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/commandtunnels:1.0.0
+      - image: __IMAGE/commandtunnels:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

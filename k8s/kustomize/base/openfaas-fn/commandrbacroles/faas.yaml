@@ -42,7 +42,7 @@ spec:
       name: commandrbacroles
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/commandrbacroles:1.0.0
+      - image: __IMAGE/commandrbacroles:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

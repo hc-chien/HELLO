@@ -42,7 +42,7 @@ spec:
       name: queryplaybooks
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/queryplaybooks:1.0.0
+      - image: __IMAGE/queryplaybooks:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

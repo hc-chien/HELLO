@@ -42,7 +42,7 @@ spec:
       name: commanddomainresolvers
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/commanddomainresolvers:1.0.0
+      - image: __IMAGE/commanddomainresolvers:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

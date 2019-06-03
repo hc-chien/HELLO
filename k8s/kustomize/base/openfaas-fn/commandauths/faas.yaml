@@ -42,7 +42,7 @@ spec:
       name: commandauths
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/commandauths:1.0.0
+      - image: __IMAGE/commandauths:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:

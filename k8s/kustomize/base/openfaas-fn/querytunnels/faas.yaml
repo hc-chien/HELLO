@@ -42,7 +42,7 @@ spec:
       name: querytunnels
     spec:
       containers:
-      - image: dockerhub.pentium.network/jhow-gde/querytunnels:1.0.0
+      - image: __IMAGE/querytunnels:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           exec:
