@@ -1,7 +1,10 @@
 # see: https://github.com/kubernetes-sigs/kustomize/blob/master/docs/kustomization.yaml
 kind: Kustomization
-resources:
-- k8s-monitor-daemonset.yaml
+
+bases:
+- ../zookeeper
+- ../kafka
+- ../fluentd
 
 configMapGenerator:
 - name: host-info
