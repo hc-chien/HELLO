@@ -65,3 +65,9 @@ querywebsshlogs
 queryworkflowlogs
 queryworkflows
 queryworkflowtemplates
+getdomains
+syncallcdns
+gfwcheck
+getcdns
+balances
+sendmessage

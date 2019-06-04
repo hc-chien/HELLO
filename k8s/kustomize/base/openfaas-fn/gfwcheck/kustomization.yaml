@@ -1,0 +1,7 @@
+# see: https://github.com/kubernetes-sigs/kustomize/blob/master/docs/kustomization.yaml
+kind: Kustomization
+resources:
+- faas.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
