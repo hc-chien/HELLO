@@ -4,16 +4,16 @@ kind: Kustomization
 bases:
   - ../../../base/monitor
 #  - ../openfaas-fn
-  - ../imagetags/hello
+#  - ../imagetags/platform-workflow-preview
 
 resources:
 - namespace.yaml
 - clusterRoleBinding.yaml
 
-namespace: hello
+namespace: platform-workflow-preview
 
 #images:
-# - name: dockerhub.pentium.network/master/pentium-fluentd
+#- name: dockerhub.pentium.network/master/pentium-fluentd
 #  newName: dockerhub.pentium.network/gde/pentium-fluentd
 #  newTag: dev
 
