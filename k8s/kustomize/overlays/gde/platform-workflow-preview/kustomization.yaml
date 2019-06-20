@@ -15,7 +15,15 @@ namespace: platform-workflow-preview
 images:
 - name: dockerhub.pentium.network/master/pentium-fluentd
   newName: dockerhub.pentium.network/gde/pentium-fluentd
-  newTag: 1.1.3-gde.5
+  newTag: 1.1.3-gde.10
+
+patchesJson6902:
+- target:
+   group: extensions
+   version: v1beta1
+   kind: DaemonSet
+   name: fluentd
+  path: patch_env.yaml
 
 #configMapGenerator:
 #- name: fluentd-env
