@@ -24,3 +24,15 @@ patchesJson6902:
     kind: Ingress
     name: pentium-jaeger-ingress
   path: patch_ingress.json
+- target:
+    group: extensions
+    version: v1beta1
+    kind: Deployment
+    name: jaeger-query
+  path: patch_env.yaml
+- target:
+    group: extensions
+    version: v1beta1
+    kind: Deployment
+    name: jaeger-collector
+  path: patch_env2.yaml
