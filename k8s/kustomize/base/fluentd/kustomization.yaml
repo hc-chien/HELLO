@@ -1,4 +1,4 @@
 # see: https://github.com/kubernetes-sigs/kustomize/blob/master/docs/kustomization.yaml
 kind: Kustomization
 resources:
-- k8s-fluentd-daemonset.yaml
+- k8s-fluentd-deployment.yaml

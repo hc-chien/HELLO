@@ -16,8 +16,10 @@ metadata:
     app: fluent-bit
 spec:
   updateStrategy:
+    rollingUpdate:
+      maxUnavailable: 10
     type: RollingUpdate
-  minReadySeconds: 15
+  minReadySeconds: 0
   template:
     metadata:
       labels:
@@ -33,7 +35,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: fluent-bit
-        image: dockerhub.pentium.network/gde/pentium-fluent-bit-collector:1.0.1-test3
+        image: dockerhub.pentium.network/gde/pentium-fluent-bit-collector:1.0.1-test4
         imagePullPolicy: Always
         resources:
           limits:

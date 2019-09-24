@@ -5,11 +5,12 @@ bases:
 - ../zookeeper
 - ../kafka
 - ../fluentd
+- ../fluent-bit
 
-configMapGenerator:
-- name: host-info
-  literals:	
-  - data01=192.168.89.95
+#configMapGenerator:
+#- name: host-info
+#  literals:	
+#  - data01=192.168.89.95
 
 #
 #- name: fluentd-env
@@ -28,12 +29,12 @@ configMapGenerator:
 #   - certs/fluentd.crt
 #   - certs/fluentd.key
 
-patchesJson6902:
-- target:
-   version: v1
-   kind: Secret 
-   name: fluentd-certs
-  path: patch_certs.yaml
+#patchesJson6902:
+#- target:
+#   version: v1
+#   kind: Secret 
+#   name: fluentd-certs
+#  path: patch_certs.yaml
 
 generatorOptions:
   disableNameSuffixHash: true

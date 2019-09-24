@@ -12,7 +12,10 @@ namespace: monitor
 images:
 - name: dockerhub.pentium.network/master/pentium-fluentd
   newName: dockerhub.pentium.network/gde/pentium-fluentd
-  newTag: dev
+  newTag: 1.2.0-hc_chien_fluentd_refactoring_in_gde-1
+- name: dockerhub.pentium.network/master/pentium-fluent-bit-collector
+  newName: dockerhub.pentium.network/gde/pentium-fluent-bit-collector
+  newTag: 1.0.1-test4
 
 #configMapGenerator:
 #- name: fluentd-env
