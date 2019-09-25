@@ -3,12 +3,12 @@ kind: ClusterRoleBinding
 metadata:
   labels:
     app.kubernetes.io/instance: generic-all-cluster
-  name: monitor
+  name: fluent-bit-access
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: fluentd
+  name: fluent-bit
 subjects:
 - kind: ServiceAccount
-  name: fluentd
+  name: fluent-bit
   namespace: monitor
