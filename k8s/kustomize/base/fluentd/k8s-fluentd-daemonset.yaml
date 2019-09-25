@@ -50,10 +50,7 @@ spec:
               apiVersion: v1
               fieldPath: metadata.namespace
         - name: FLUENTD_ELASTICSEARCH_IP
-          valueFrom:
-            configMapKeyRef:
-              name: host-info
-              key: data01
+          value: elasticsearch.$(POD_NAMESPACE)
         - name: FLUENTD_ELASTICSEARCH_PORT
           value: "9200"
         - name: FLUENTD_CONTAINERS_LOG_PATH
@@ -62,10 +59,10 @@ spec:
           value: /var/log/fluentd-containers-$(POD_NAMESPACE).log.pos
         - name: FLUENTD_KAFKA_BROKERS
           value: kafka-0.kafka-svc:9092,kafka-1.kafka-svc:9092,kafka-2.kafka-svc:9092
-        - name: FLUENTD_SCRIPTS_SERVICE_ENDPOINT_URL
-          value: http://scripts-service.$(POD_NAMESPACE).svc.cluster.local/scripts/deployments
-        - name: FLUENTD_WEBHOOKS_SYNCHRONIZATION_ENDPOINT_URL
-          value: http://router.$(POD_NAMESPACE).svc.cluster.local/api/hosts/webhooks/synchronization
+#        - name: FLUENTD_SCRIPTS_SERVICE_ENDPOINT_URL
+#          value: http://scripts-service.$(POD_NAMESPACE).svc.cluster.local/scripts/deployments
+#        - name: FLUENTD_WEBHOOKS_SYNCHRONIZATION_ENDPOINT_URL
+#          value: http://router.$(POD_NAMESPACE).svc.cluster.local/api/hosts/webhooks/synchronization
         - name: FLUENTD_SLACK_WEBHOOK_URL
           value: https://hooks.slack.com/services/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
         - name: FLUENTD_SLACK_CHANNEL

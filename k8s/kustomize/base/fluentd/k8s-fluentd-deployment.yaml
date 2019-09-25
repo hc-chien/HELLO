@@ -23,8 +23,8 @@ spec:
         kubernetes.io/cluster-service: "true"
         app: fluentd
     spec:
-      serviceAccount: fluentd
-      serviceAccountName: fluentd
+#      serviceAccount: fluentd
+#      serviceAccountName: fluentd
       tolerations:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
@@ -45,16 +45,13 @@ spec:
               apiVersion: v1
               fieldPath: metadata.namespace
         - name: FLUENTD_ELASTICSEARCH_IP
-          valueFrom:
-            configMapKeyRef:
-              name: host-info
-              key: data01
+          value: elasticsearch.$(POD_NAMESPACE)
         - name: FLUENTD_ELASTICSEARCH_PORT
           value: "9200"
-        - name: FLUENTD_CONTAINERS_LOG_PATH
-          value: /var/log/containers/*_$(POD_NAMESPACE)-router-*.log,/var/log/containers/*$(POD_NAMESPACE)-openfaas-fn*.log,/var/log/containers/ofsm-runner-*_$(POD_NAMESPACE)_*.log,/var/log/containers/scripts-runner-*_$(POD_NAMESPACE)_*.log,/var/log/containers/scripts-service-*_$(POD_NAMESPACE)_*.log,/var/log/containers/workflows-eventhandler-*_$(POD_NAMESPACE)_*.log,/var/log/containers/scripts-installer-*_$(POD_NAMESPACE)_*.log,/var/log/containers/cloudkit-*_$(POD_NAMESPACE)_*.log,/var/log/containers/rbac-condition-constructor-*_$(POD_NAMESPACE)_*.log,/var/log/containers/cloudvm-manipulator-*_$(POD_NAMESPACE)_*.log,/var/log/containers/gateone-*_$(POD_NAMESPACE)_*.log,/var/log/containers/sftp-*_$(POD_NAMESPACE)_*.log,/var/log/containers/workflows-templateinstaller-*_$(POD_NAMESPACE)_*.log
-        - name: FLUENTD_CONTAINERS_POS_FILE
-          value: /var/log/fluentd-containers-$(POD_NAMESPACE).log.pos
+#        - name: FLUENTD_CONTAINERS_LOG_PATH
+#          value: /var/log/containers/*_$(POD_NAMESPACE)-router-*.log,/var/log/containers/*$(POD_NAMESPACE)-openfaas-fn*.log,/var/log/containers/ofsm-runner-*_$(POD_NAMESPACE)_*.log,/var/log/containers/scripts-runner-*_$(POD_NAMESPACE)_*.log,/var/log/containers/scripts-service-*_$(POD_NAMESPACE)_*.log,/var/log/containers/workflows-eventhandler-*_$(POD_NAMESPACE)_*.log,/var/log/containers/scripts-installer-*_$(POD_NAMESPACE)_*.log,/var/log/containers/cloudkit-*_$(POD_NAMESPACE)_*.log,/var/log/containers/rbac-condition-constructor-*_$(POD_NAMESPACE)_*.log,/var/log/containers/cloudvm-manipulator-*_$(POD_NAMESPACE)_*.log,/var/log/containers/gateone-*_$(POD_NAMESPACE)_*.log,/var/log/containers/sftp-*_$(POD_NAMESPACE)_*.log,/var/log/containers/workflows-templateinstaller-*_$(POD_NAMESPACE)_*.log
+#        - name: FLUENTD_CONTAINERS_POS_FILE
+#          value: /var/log/fluentd-containers-$(POD_NAMESPACE).log.pos
         - name: FLUENTD_KAFKA_BROKERS
           value: kafka-0.kafka-svc:9092,kafka-1.kafka-svc:9092,kafka-2.kafka-svc:9092
         - name: FLUENTD_SCRIPTS_SERVICE_ENDPOINT_URL
@@ -76,11 +73,11 @@ spec:
           name: pn-fluentd-certs-config
         - mountPath: /etc/localtime
           name: time
-        - name: varlibdockercontainers
-          mountPath: /var/lib/docker/containers
-          readOnly: true
-        - name: varlog
-          mountPath: /var/log
+#        - name: varlibdockercontainers
+#          mountPath: /var/lib/docker/containers
+#          readOnly: true
+#        - name: varlog
+#          mountPath: /var/log
       volumes:
       - name: pn-fluentd-certs-config
         secret:
@@ -90,12 +87,12 @@ spec:
       - name: time
         hostPath:
           path: /etc/localtime
-      - name: varlibdockercontainers
-        hostPath:
-          path: /var/lib/docker/containers
-      - name: varlog
-        hostPath:
-          path: /var/log
+#      - name: varlibdockercontainers
+#        hostPath:
+#          path: /var/lib/docker/containers
+#      - name: varlog
+#        hostPath:
+#          path: /var/log
 ---
 kind: Service
 apiVersion: v1
