@@ -42,12 +42,9 @@ spec:
             cpu: 200m
         env:
         - name: POD_NAMESPACE
-          valueFrom:
-            fieldRef:
-              apiVersion: v1
-              fieldPath: metadata.namespace
+          value: "*"
         - name: FLUENTD_CONTAINERS_LOG_PATH
-          value: /var/log/containers/*openfaas-fn*.log, /var/log/containers/*_ofsm-runner-*.log, /var/log/containers/*_scripts-*-*.log, /var/log/containers/*_workflows-eventhandler-*.log
+          value: /var/log/containers/*_$(POD_NAMESPACE)-router-*.log,/var/log/containers/*$(POD_NAMESPACE)-openfaas-fn*.log,/var/log/containers/ofsm-runner-*_$(POD_NAMESPACE)_*.log,/var/log/containers/scripts-runner-*_$(POD_NAMESPACE)_*.log,/var/log/containers/scripts-service-*_$(POD_NAMESPACE)_*.log,/var/log/containers/workflows-eventhandler-*_$(POD_NAMESPACE)_*.log,/var/log/containers/scripts-installer-*_$(POD_NAMESPACE)_*.log,/var/log/containers/cloudkit-*_$(POD_NAMESPACE)_*.log,/var/log/containers/rbac-condition-constructor-*_$(POD_NAMESPACE)_*.log,/var/log/containers/cloudvm-manipulator-*_$(POD_NAMESPACE)_*.log,/var/log/containers/gateone-*_$(POD_NAMESPACE)_*.log,/var/log/containers/sftp-*_$(POD_NAMESPACE)_*.log,/var/log/containers/workflows-templateinstaller-*_$(POD_NAMESPACE)_*.log
         - name: FLUENTD_CONTAINERS_POS_FILE
           value: /var/log/fluentd-collector.log.pos
 #        ports:
