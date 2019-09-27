@@ -5,7 +5,8 @@ bases:
 - ../zookeeper
 - ../kafka
 - ../fluentd
-- ../fluent-bit
+- ../fluentd-collector
+#- ../fluent-bit
 
 #configMapGenerator:
 #- name: host-info
