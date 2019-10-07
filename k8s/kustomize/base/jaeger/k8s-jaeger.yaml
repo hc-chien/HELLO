@@ -31,7 +31,7 @@ items:
           prometheus.io/port: "14268"
       spec:
         containers:
-        - image: jaegertracing/jaeger-collector:1.11.0
+        - image: jaegertracing/jaeger-collector:1.14.0
           name: jaeger-collector
           args: ["--sampling.strategies-file=/conf/sampling-strategies.json",]
           ports:
@@ -50,14 +50,15 @@ items:
             mountPath: /conf
           env:
           - name: SPAN_STORAGE_TYPE
-            value: elasticsearch
-          - name: ES_SERVER
-            valueFrom:
-              configMapKeyRef:
-                name: host-info
-                key: data01
-          - name: ES_SERVER_URLS
-            value: http://$(ES_SERVER):9200
+            value: kafka
+          - name: KAFKA_BROKERS
+            value: kafka-0.kafka-svc.workflow-preview:9092,kafka-1.kafka-svc.workflow-preview:9092,kafka-2kafka-svc..workflow-preview:9092
+          - name: KAFKA_PRODUCER_BROKERS
+            value: $(KAFKA_BROKERS)
+          - name: KAFKA_TOPIC
+            value: jaeger
+          - name: KAFKA_PRODUCER_TOPIC
+            value: $(KAFKA_TOPIC)
         volumes:
           - configMap:
               name: jaeger-configuration
@@ -114,6 +115,59 @@ items:
 - apiVersion: extensions/v1beta1
   kind: Deployment
   metadata:
+    name: jaeger-ingester
+    namespace: tracing
+    labels:
+      app: jaeger
+      app.kubernetes.io/name: jaeger
+      app.kubernetes.io/component: ingester
+  spec:
+    replicas: 1
+    strategy:
+      type: Recreate
+    template:
+      metadata:
+        labels:
+          app: jaeger
+          app.kubernetes.io/name: jaeger
+          app.kubernetes.io/component: ingester
+        annotations:
+          prometheus.io/scrape: "true"
+          prometheus.io/port: "16686"
+      spec:
+        containers:
+        - image: jaegertracing/jaeger-ingester:1.14.0
+          name: jaeger-ingester
+          # ports:
+          # HTTP health check port: $ curl -v http://localhost:14270/
+          # - "14270:14270"
+          # Metrics port: $ curl http://localhost:14271/metrics
+          # - "14271:14271"
+          env:
+          - name: INGESTER_PARALLELISM
+            value: "1"
+          - name: INGESTER_DEADLOCKINTERVAL
+            value: 0ms
+          - name: KAFKA_BROKERS
+            value: kafka-0.kafka-svc.workflow-preview:9092,kafka-1.kafka-svc.workflow-preview:9092,kafka-2kafka-svc..workflow-preview:9092
+          - name: KAFKA_CONSUMER_BROKERS
+            value: $(KAFKA_BROKERS)
+          - name: KAFKA_TOPIC
+            value: jaeger
+          - name: KAFKA_CONSUMER_TOPIC
+            value: $(KAFKA_TOPIC)
+          - name: SPAN_STORAGE_TYPE
+            value: elasticsearch
+          - name: ES_SERVER
+            valueFrom:
+              configMapKeyRef:
+                name: host-info
+                key: data01
+          - name: ES_SERVER_URLS
+            value: http://$(ES_SERVER):9200
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
     name: jaeger-query
     namespace: tracing
     labels:
@@ -135,7 +189,7 @@ items:
           prometheus.io/port: "16686"
       spec:
         containers:
-        - image: jaegertracing/jaeger-query:1.11.0
+        - image: jaegertracing/jaeger-query:1.14.0
           name: jaeger-query
           ports:
           - containerPort: 16686
@@ -202,7 +256,7 @@ items:
       spec:
         containers:
         - name: jaeger-agent
-          image: jaegertracing/jaeger-agent:1.11.0
+          image: jaegertracing/jaeger-agent:1.14.0
           args: ["--collector.host-port=jaeger-collector:14267"]
           ports:
           - containerPort: 5775

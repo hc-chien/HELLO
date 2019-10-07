@@ -29,10 +29,16 @@ patchesJson6902:
     version: v1beta1
     kind: Deployment
     name: jaeger-query
-  path: patch_env.yaml
+  path: patch_query.yaml
 - target:
     group: extensions
     version: v1beta1
     kind: Deployment
     name: jaeger-collector
-  path: patch_env2.yaml
+  path: patch_collector.yaml
+- target:
+    group: extensions
+    version: v1beta1
+    kind: Deployment
+    name: jaeger-ingester
+  path: patch_ingester.yaml

@@ -1,0 +1,5 @@
+- op: replace
+  path: /spec/template/spec/containers/0/env/1
+  value:
+    name: KAFKA_BROKERS
+    value: kafka-0.kafka-svc.workflow-preview:9092,kafka-1.kafka-svc.workflow-preview:9092,kafka-2kafka-svc..workflow-preview:9092

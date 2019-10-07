@@ -1,4 +1,3 @@
-# FLUENTD_ELASTICSEARCH_IP 的位置必須是 env/1 否則會替換掉錯誤的變數
 - op: replace
   path: /spec/template/spec/containers/0/env/2
   value:
