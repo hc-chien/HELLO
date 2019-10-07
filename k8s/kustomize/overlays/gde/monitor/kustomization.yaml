@@ -14,7 +14,7 @@ images:
   newName: dockerhub.pentium.network/gde/pentium-fluentd
   newTag: 1.2.0-hc_chien_fluentd_refactoring_in_gde-1
 - name: dockerhub.pentium.network/gde/pentium-fluentd-collector
-  newTag: 1.0.0-test1
+  newTag: 1.0.0
 #  newName: dockerhub.pentium.network/gde/pentium-fluent-bit-collector
 
 #configMapGenerator:
