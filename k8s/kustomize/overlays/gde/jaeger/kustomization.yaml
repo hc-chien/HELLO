@@ -5,11 +5,11 @@ bases:
 
 images:
   - name: jaegertracing/jaeger-collector
-    newTag: "1.12.0"
+    newTag: "1.14.0"
   - name: jaegertracing/jaeger-query
-    newTag: "1.12.0"
+    newTag: "1.14.0"
   - name: jaegertracing/jaeger-agent
-    newTag: "1.12.0"
+    newTag: "1.14.0"
 
 configMapGenerator:
 - name: host-info
