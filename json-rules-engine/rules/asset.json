@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "name": "assetCreated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "assetCreated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "assetCreated"
+        }
+      }
+    },
+    {
+      "name": "assetUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "assetUpdated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "assetUpdated"
+        }
+      }
+    },
+    {
+      "name": "assetUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "assetDeleted",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "assetDeleted"
+        }
+      }
+    }
+  ]
+}

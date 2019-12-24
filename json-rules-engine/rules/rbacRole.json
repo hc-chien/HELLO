@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "name": "rbacRoleCreated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacRoleCreated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacRoleCreated"
+        }
+      }
+    },
+    {
+      "name": "rbacRoleUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacRoleUpdated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacRoleUpdated"
+        }
+      }
+    },
+    {
+      "name": "rbacRoleUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacRoleDeleted",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "rbacRoleDeleted"
+        }
+      }
+    }
+  ]
+}

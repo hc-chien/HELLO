@@ -1,0 +1,345 @@
+################################################
+# "create hosts" logs examples:
+# 
+#  1. gateway receive an http reques from frontend  / debug
+#  2. gateway send an http request to openfaas / debug
+#  3. openfaas handler invoke an function / debug
+#  4. access neo4j database / debug
+#  5. asset hosts created / info
+#  6. developer write a debug message / debug
+#  7. developer write an important warning message / warn
+#  8. function executed and results received / debug
+#  9. gateway receive an http response from openfaas / debug
+# 10. gateway send an http response to frontend / debug
+#
+# business log for operator:
+#  1. gateway receive an http reques from frontend / debug (httpRequestReceived)
+#  5. asset hosts created / info                           (assetCreated)
+#  7. developer write an important warning message / warn  (message)
+# 10. gateway send an http response to frontend / debug    (httpResponseSend)
+################################################
+
+
+# 1. gateway receive an http request
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "debug",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "OpenFaasController",
+   "function": "callback",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "httpRequestReceived: POST /api/hosts",
+   "httpRequestReceived": {
+     "httpMethod":"POST",
+     "path":"/api/hosts",
+     "queryString": {},
+     "requestBody": [{
+       "name": "duck1",
+       "createdAt": "2019-11-07T10:23:35.102Z",
+       "addresses": [ {
+         "ip": "192.168.11.22",
+         "description": "string"
+       }]
+     }]
+   }
+}
+
+# 2. gateway send http request
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "debug",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "OpenFaasController",
+   "function": "callback",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "httpRequestSend: POST http://commandhosts.openfaas-fn/hosts",
+   "httpRequestSend": {
+     "httpMethod":"POST",
+     "url":"http://commandhosts.openfaas-fn/hosts",
+     "requestHeader": {
+        "Content-Type": "application/json; charset=utf-8"
+     },
+     "requestBody": [{
+       "name": "duck1",
+       "createdAt": "2019-11-07T10:23:35.102Z",
+       "addresses": [ {
+         "ip": "192.168.11.22",
+         "description": "string"
+       }]
+     }]
+   }
+}
+
+# 3. invoke createHost function
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "debug",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "CommandHosts",
+   "function": "wrapper",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "functionInvoked: createHost",
+   "functionInvoked": {
+     "function": "createHost",
+     "inputParameters": [{
+       "name": "duck1",
+       "createdAt": "2019-11-07T10:23:35.102Z",
+       "addresses": [ {
+         "ip": "192.168.11.22",
+         "description": "string"
+       }]
+     }]
+   }
+}
+
+# 4. access neo4j database
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "debug",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "Hosts",
+   "function": "save",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "neo4j cypher: ....",
+   "databaseAccessed": {
+     "dbType":"neo4j",
+     "statement": "...."
+   }
+}
+
+# 5. asset created
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "info",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "Hosts",
+   "function": "save",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "assetCreated: host",  
+   "assetCreated": {
+     "host": [{
+       "id": "S-dk0p08kqc",
+       "project":  ["PJ-dk1ha57i4", "PJ-dk1ha57i4"]
+     }] 
+   }
+}
+
+# 6. developer write a debug message 
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "debug",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "CommandHosts",
+   "function": "createHost",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "this is a debug message from developer"
+}
+
+# 7. developer write an important warning message
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "warn",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "CommandHosts",
+   "function": "createHost",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "Warning! disk usage > 80%"
+}
+
+# 8. createHost function executed
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "debug",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "CommandHosts",
+   "function": "wrapper",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "functionExecuted: createHost",
+   "functionExecuted": {
+     "function": "createHost",
+     "result": [{
+        "createdBy": {
+          "id": "U-dk0p08kqc",
+          "name": "green"
+        },
+        "createdAt": "2019-11-07T10:23:35.102Z",
+        "id": "S-dk0p08kqc",
+        "name": "duck1",
+        "addresses": [{
+          "ip": "192.168.11.22",
+          "description": "string"
+        }],
+        "project":  [{
+          "name": "project1",
+          "id": "PJ-dk1ha57i4"
+        },{
+          "name": "project2",
+          "id": "PJ-dk1ha57i4"
+        }]
+     }]
+   }
+}
+
+# 9. gateway receive an http response
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "debug",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "OpenFaasController",
+   "function": "caller",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "httpResponseReceived: statusCode=200",
+   "httpResponseReceived": {
+     "httpStatusCode": 200,
+     "responseHeader": {
+        "Content-Type": "application/json; charset=utf-8"
+     },
+     "responseBody": [{
+        "createdBy": {
+          "id": "U-dk0p08kqc",
+          "name": "green"
+        },
+        "createdAt": "2019-11-07T10:23:35.102Z",
+        "id": "S-dk0p08kqc",
+        "name": "duck1",
+        "addresses": [{
+          "ip": "192.168.11.22",
+          "description": "string"
+        }],
+        "project":  [{
+          "name": "project1",
+          "id": "PJ-dk1ha57i4"
+        },{
+          "name": "project2",
+          "id": "PJ-dk1ha57i4"
+        }]
+     }]
+   }
+}
+
+# 10. gateway send an http response
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "debug",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "OpenFaasController",
+   "function": "caller",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "httpResponseSend: statusCode=200",
+   "httpResponseSend": {
+     "httpStatusCode": 200,
+     "responseHeader": {
+        "Content-Type": "application/json; charset=utf-8"
+     },
+     "responseBody": [ {
+        "createdBy": {
+          "id": "U-dk0p08kqc",
+          "name": "green"
+        },
+        "createdAt": "2019-11-07T10:23:35.102Z",
+        "id": "S-dk0p08kqc",
+        "name": "duck1",
+        "addresses": [{
+          "ip": "192.168.11.22",
+          "description": "string"
+        }],
+        "project":  [{
+          "name": "project1",
+          "id": "PJ-dk1ha57i4"
+        },{
+          "name": "project2",
+          "id": "PJ-dk1ha57i4"
+        }]
+     }]
+   }
+}

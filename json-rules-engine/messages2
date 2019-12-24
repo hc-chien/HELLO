@@ -1,0 +1,91 @@
+################################################
+# misc log examples
+################################################
+ 
+# not product log
+{
+   "level": "debug",
+   "message": "for debugging"
+}
+
+# product log
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "error",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "OpenFaasController",
+   "function": "callback",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "errorRaised: WorkflowInvalidError",
+   "errorRaised": {
+     "message": "Next node not found.",
+     "stack": "WorkflowInvalidError at workflowController.workflowController (webpack:///./node_modules/@pentium/workflowController/CommandWorkflowController.js?:425:13) at <anonymous> at process._tickDomainCallback (internal/process/next_tick.js:229:7)"
+   }
+}
+
+# not product log
+{
+   "level": "debug",
+   "message": "for debugging",
+   "errorRaised": {
+       "message": "..."
+   }
+}
+
+# product log
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "info",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "OpenFaasController",
+   "function": "callback",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "event: network.pentium.platform.miscOperation",
+   "data": {
+     "eventType":"network.pentium.platform.miscOperation",
+     "payload": "...."
+   }
+}
+
+# not product log
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "info",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "OpenFaasController",
+   "function": "callback",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "common data",
+   "data": {
+     "myParam": ["p1","p2"],
+     "myValues": ["v1", "v2"]
+   }
+}
+

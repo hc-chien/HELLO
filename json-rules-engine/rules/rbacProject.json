@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "name": "rbacProjectCreated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacProjectCreated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacProjectCreated"
+        }
+      }
+    },
+    {
+      "name": "rbacProjectUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacProjectUpdated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacProjectUpdated"
+        }
+      }
+    },
+    {
+      "name": "rbacProjectUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacProjectDeleted",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "rbacProjectDeleted"
+        }
+      }
+    }
+  ]
+}

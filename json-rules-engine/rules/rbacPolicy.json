@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "name": "rbacPolicyCreated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacPolicyCreated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacPolicyCreated"
+        }
+      }
+    },
+    {
+      "name": "rbacPolicyUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacPolicyUpdated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacPolicyUpdated"
+        }
+      }
+    },
+    {
+      "name": "rbacPolicyUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacPolicyDeleted",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "rbacPolicyDeleted"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "name": "rbacUserCreated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacUserCreated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacUserCreated"
+        }
+      }
+    },
+    {
+      "name": "rbacUserUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacUserUpdated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacUserUpdated"
+        }
+      }
+    },
+    {
+      "name": "rbacUserUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "rbacUserDeleted",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "rbacUserDeleted"
+        }
+      }
+    }
+  ]
+}

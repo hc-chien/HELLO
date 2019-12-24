@@ -1,0 +1,6 @@
+{
+  "assetCreated": "添加{{assetTypeName}}:{{assetName}} ({{assetId}}) 成功",
+  "assetCreatedFailed": "添加{{assetTypeName}}:{{assetName}} ({{assetId}}) 添加失敗 (原因:{{message}})",
+  "assetCreated": "添加{{assetTypeName}}:{{assetName}} ({{assetId}}) 成功",
+  "assetCreatedFailed": "添加{{assetTypeName}}:{{assetName}} ({{assetId}}) 添加失敗 (原因:{{message}})"
+}

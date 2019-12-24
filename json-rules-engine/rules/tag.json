@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "name": "tagCreated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "tagCreated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "tagCreated"
+        }
+      }
+    },
+    {
+      "name": "tagUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "tagUpdated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "tagUpdated"
+        }
+      }
+    },
+    {
+      "name": "tagUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "tagDeleted",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "tagDeleted"
+        }
+      }
+    }
+  ]
+}

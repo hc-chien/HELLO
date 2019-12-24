@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "name": "eventSchemaCreated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "eventSchemaCreated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "eventSchemaCreated"
+        }
+      }
+    },
+    {
+      "name": "eventSchemaUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "eventSchemaUpdated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "eventSchemaUpdated"
+        }
+      }
+    },
+    {
+      "name": "eventSchemaUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "eventSchemaDeleted",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "eventSchemaDeleted"
+        }
+      }
+    }
+  ]
+}

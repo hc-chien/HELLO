@@ -1,0 +1,127 @@
+###############################################
+# ssh log example
+#
+# 判斷直連或透過維運平台
+# 1. function: "process", "_ssh_alert_log"
+# 2. sshRecorded.loginUser: "root", "centOS"
+# 3. level: "info", "warn"
+# 4. message
+################################################
+
+# ssh record
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "info",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "sshlogadapter",
+   "function": "process",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "透过运维平台登录",
+   "sshRecorded": {
+     "destIp: "61.216.74.14",
+     "loginUser": "root",
+     "port": "46009",
+     "recPath": "network.pentium.sshrec.log/1d/1d3c79e56180f06e5522ac56b15a2f44/20191115/1573807737.149486749.root.log",
+     "srcIp": "192.168.89.254",
+     "projectIds": [ "PJ-dk1ha57i4", "PJ-dk1ha57i4" ],
+     "target": "centos7.7(S-bk2zvslji)[47.56.188.151:22]"
+   }
+}
+
+###############################################
+# datalog example
+################################################
+
+# database: 發出審計請求
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "info",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "SqlRequestListView",
+   "function": "post",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "this is requested message",
+   "data": {
+     "databaseAuditingRequested":{
+       "id": "DB-bk10hdj5f",
+       "ip": "192.168.89.48",
+       "name": "mysql_db"
+     },
+     "projectIds": [ "PJ-dk1ha57i4", "PJ-dk1ha57i4" ],
+   }
+}
+
+# database: 拒絕修改項目
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "info",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "SqlRequestListView",
+   "function": "post",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "reason for rejected request",
+   "data": {
+     "databaseAuditingRejected":{
+       "id": "DB-bk10hdj5f",
+       "ip": "192.168.89.48",
+       "name": "mysql_db"
+     },
+     "projectIds": [ "PJ-dk1ha57i4", "PJ-dk1ha57i4" ],
+   }
+}
+
+# database: 同意修改項目
+{
+   "taskId": "WF-1570504132-zdpyYr",
+   "dateTime": "2019-10-08T05:32:34.231Z",
+   "level": "info",
+   "podId": "corezilla:commandusers-c775854d4-49cb9",
+   "component": "SqlRequestListView",
+   "function": "post",
+   "caller": {
+     "userId": "U-dk0p08kqc",
+     "name": "green",
+     "account": "green",
+     "callerType": "user",
+     "iat": 1234567890,
+     "ip": "1.1.1.1",
+     "xForwardFor": "1.2.3.4"
+   },
+   "message": "approved message",
+   "data": {
+     "databaseAuditingApproved":{
+       "id": "DB-bk10hdj5f",
+       "ip": "192.168.89.48",
+       "name": "mysql_db"
+     },
+     "projectIds": [ "PJ-dk1ha57i4", "PJ-dk1ha57i4" ],
+   }
+}
+

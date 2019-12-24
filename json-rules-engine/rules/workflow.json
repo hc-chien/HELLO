@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "name": "workflowCreated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "workflowCreated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "workflowCreated"
+        }
+      }
+    },
+    {
+      "name": "workflowUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "workflowUpdated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "workflowUpdated"
+        }
+      }
+    },
+    {
+      "name": "workflowUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "workflowDeleted",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "workflowDeleted"
+        }
+      }
+    }
+  ]
+}

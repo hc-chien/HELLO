@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "name": "scriptCreated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "scriptCreated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "scriptCreated"
+        }
+      }
+    },
+    {
+      "name": "scriptUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "scriptUpdated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "scriptUpdated"
+        }
+      }
+    },
+    {
+      "name": "scriptUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "scriptDeleted",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "scriptDeleted"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "name": "workflowTemplateCreated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "workflowTemplateCreated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "workflowTemplateCreated"
+        }
+      }
+    },
+    {
+      "name": "workflowTemplateUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "workflowTemplateUpdated",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "workflowTemplateUpdated"
+        }
+      }
+    },
+    {
+      "name": "workflowTemplateUpdated",
+      "conditions": {
+        "any": [
+          {
+            "fact": "workflowTemplateDeleted",
+            "operator": "exist",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "workflowTemplateDeleted"
+        }
+      }
+    }
+  ]
+}
