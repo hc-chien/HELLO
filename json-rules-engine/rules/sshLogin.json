@@ -1,0 +1,29 @@
+{
+  "rules": [
+    {
+      "name": "sshLogin",
+      "conditions": {
+        "all": [
+          {
+            "fact": "data",
+            "operator": "exist",
+            "value": true,
+            "path": "$.sshInfo"
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "tag": "product",
+          "msgCode": "sshLogin"
+        }
+      }
+    }
+  ]
+}

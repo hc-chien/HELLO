@@ -26,14 +26,16 @@
      "xForwardFor": "1.2.3.4"
    },
    "message": "透过运维平台登录",
-   "sshRecorded": {
-     "destIp: "61.216.74.14",
-     "loginUser": "root",
-     "port": "46009",
-     "recPath": "network.pentium.sshrec.log/1d/1d3c79e56180f06e5522ac56b15a2f44/20191115/1573807737.149486749.root.log",
-     "srcIp": "192.168.89.254",
-     "projectIds": [ "PJ-dk1ha57i4", "PJ-dk1ha57i4" ],
-     "target": "centos7.7(S-bk2zvslji)[47.56.188.151:22]"
+   "data": {
+     "sshInfo": {
+       "destIp": "61.216.74.14",
+       "loginUser": "root",
+       "port": "46009",
+       "recPath": "network.pentium.sshrec.log/1d/1d3c79e56180f06e5522ac56b15a2f44/20191115/1573807737.149486749.root.log",
+       "srcIp": "192.168.89.254",
+       "projectIds": [ "PJ-dk1ha57i4", "PJ-dk1ha57i4" ],
+       "target": "centos7.7(S-bk2zvslji)[47.56.188.151:22]"
+     }
    }
 }
 
@@ -64,8 +66,7 @@
        "id": "DB-bk10hdj5f",
        "ip": "192.168.89.48",
        "name": "mysql_db"
-     },
-     "projectIds": [ "PJ-dk1ha57i4", "PJ-dk1ha57i4" ],
+     }
    }
 }
 
@@ -92,8 +93,7 @@
        "id": "DB-bk10hdj5f",
        "ip": "192.168.89.48",
        "name": "mysql_db"
-     },
-     "projectIds": [ "PJ-dk1ha57i4", "PJ-dk1ha57i4" ],
+     }
    }
 }
 
@@ -120,8 +120,7 @@
        "id": "DB-bk10hdj5f",
        "ip": "192.168.89.48",
        "name": "mysql_db"
-     },
-     "projectIds": [ "PJ-dk1ha57i4", "PJ-dk1ha57i4" ],
+     }
    }
 }
 

@@ -27,6 +27,7 @@ i18next.init({
 });
 
 var assetKeys = ['assetCreated', 'assetUpdated', 'assetDeleted', 'assetRead'];
+var errorKeys = ['errorRaised'];
 
 // =================
 exports.transform = function (msgCode, fact)
@@ -38,8 +39,11 @@ exports.transform = function (msgCode, fact)
           fact.assetId = fact[prop][fact.assetType][0].id;
           fact.assetName = "host-1234";
           fact.project = fact[prop][fact.assetType][0].project;
-          fact.msgLocale = i18next.t(msgCode, fact);
-          return fact;
+          // fact.msgLocale = i18next.t(msgCode, fact);
+          // return fact;
       }
+
+      fact.msgLocale = i18next.t(msgCode, fact);
+      return fact;
    }
 }

@@ -1,0 +1,28 @@
+{
+  "rules": [
+    {
+      "name": "errorRaised",
+      "conditions": {
+        "all": [
+          {
+            "fact": "errorRaised",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "tag": "product",
+          "msgCode": "errorRaised"
+        }
+      }
+    }
+  ]
+}
