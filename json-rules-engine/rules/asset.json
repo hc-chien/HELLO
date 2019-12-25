@@ -3,11 +3,16 @@
     {
       "name": "assetCreated",
       "conditions": {
-        "any": [
+        "all": [
           {
             "fact": "assetCreated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -19,13 +24,41 @@
       }
     },
     {
+      "name": "assetCreateFailed",
+      "conditions": {
+        "all": [
+          {
+            "fact": "assetCreated",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "assetCreateFailed"
+        }
+      }
+    },
+    {
       "name": "assetUpdated",
       "conditions": {
-        "any": [
+        "all": [
           {
             "fact": "assetUpdated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -37,20 +70,71 @@
       }
     },
     {
-      "name": "assetUpdated",
+      "name": "assetUpdateFailed",
       "conditions": {
-        "any": [
+        "all": [
           {
-            "fact": "assetDeleted",
+            "fact": "assetUpdated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
           }
         ]
       },
       "event": {
         "type": "tagging",
         "params": {
-          "messageTag": "assetDeleted"
+          "msgCode": "assetUpdateFailed"
+        }
+      }
+    },
+    {
+      "name": "assetDeleted",
+      "conditions": {
+        "all": [
+          {
+            "fact": "assetDeleted",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "assetDeleted"
+        }
+      }
+    },
+    {
+      "name": "assetDeleteFailed",
+      "conditions": {
+        "all": [
+          {
+            "fact": "assetDeleted",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "assetDeleteFailed"
         }
       }
     }
