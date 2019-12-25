@@ -40,7 +40,7 @@
 }
 
 ###############################################
-# datalog example
+# database auditing example
 ################################################
 
 # database: 發出審計請求
@@ -60,7 +60,7 @@
      "ip": "1.1.1.1",
      "xForwardFor": "1.2.3.4"
    },
-   "message": "this is requested message",
+   "message": "request for database auditing",
    "data": {
      "databaseAuditingRequested":{
        "id": "DB-bk10hdj5f",
