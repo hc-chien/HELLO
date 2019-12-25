@@ -59,9 +59,15 @@ facts.forEach(function (fact) {
 
      if (results.events[0].params.msgCode != undefined) {
         var msgCode = results.events[0].params.msgCode;
-        x = I18n.transform(msgCode, fact);
-        console.log(x);
+        fact = I18n.transform(msgCode, fact);
      }
+
+     if (results.events[0].params.level != undefined) {
+        var level = results.events[0].params.level;
+        fact.level = results.events[0].params.level;
+     }
+
+     console.log(fact);
      // console.log(fact.message);
   });
 });

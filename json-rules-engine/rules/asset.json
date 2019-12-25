@@ -19,7 +19,8 @@
       "event": {
         "type": "tagging",
         "params": {
-          "msgCode": "assetCreated"
+          "msgCode": "assetCreated",
+          "level": "info"
         }
       }
     },
@@ -42,7 +43,8 @@
       "event": {
         "type": "tagging",
         "params": {
-          "msgCode": "assetCreateFailed"
+          "msgCode": "assetCreateFailed",
+          "level": "error"
         }
       }
     },
@@ -65,7 +67,8 @@
       "event": {
         "type": "tagging",
         "params": {
-          "msgCode": "assetUpdated"
+          "msgCode": "assetUpdated",
+          "level": "info"
         }
       }
     },
@@ -88,7 +91,8 @@
       "event": {
         "type": "tagging",
         "params": {
-          "msgCode": "assetUpdateFailed"
+          "msgCode": "assetUpdateFailed",
+          "level": "error"
         }
       }
     },
@@ -111,7 +115,8 @@
       "event": {
         "type": "tagging",
         "params": {
-          "msgCode": "assetDeleted"
+          "msgCode": "assetDeleted",
+          "level": "info"
         }
       }
     },
@@ -134,7 +139,8 @@
       "event": {
         "type": "tagging",
         "params": {
-          "msgCode": "assetDeleteFailed"
+          "msgCode": "assetDeleteFailed",
+          "level": "error"
         }
       }
     }
