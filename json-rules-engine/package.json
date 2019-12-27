@@ -1,0 +1,17 @@
+{
+  "name": "transformer",
+  "version": "1.0.0",
+  "description": "### json rules (/rules) - 定義需要匹配的產品日誌 - 每則 rule 需要一個對應的 msgCode - 可以多則 rules 對應同一個 msgCode",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "i18next": "^19.0.2",
+    "json-rules-engine": "^5.0.0",
+    "ramda": "^0.26.1",
+    "require-all": "^3.0.0"
+  }
+}
