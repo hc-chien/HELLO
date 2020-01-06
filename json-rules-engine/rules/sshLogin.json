@@ -24,6 +24,31 @@
           "msgCode": "sshLogin"
         }
       }
+    },
+    {
+      "name": "sshLogin2",
+      "conditions": {
+        "all": [
+          {
+            "fact": "function",
+            "operator": "equal",
+            "value": "sshlogadapter:wrapper"
+          },
+          {
+            "fact": "data",
+            "operator": "equal",
+            "value": false,
+            "path": "$.debug"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "tag": "product",
+          "msgCode": "message"
+        }
+      }
     }
   ]
 }

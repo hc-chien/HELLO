@@ -1,0 +1,81 @@
+#
+
+
+{
+  "taskId": "WF-1578278667-QOwU04_1",
+  "dateTime": "2020-01-06T02:44:27.937716+00:00",
+  "podId": "sshlogadapter-ddf4d58c5-b8d4w",
+  "package": "",
+  "version": "",
+  "component": "",
+  "function": "sshlogadapter:wrapper",
+  "caller": {
+    "userId": "SuperUser",
+    "name": "System",
+    "account": "",
+    "callerType": -1,
+    "iat": 0,
+    "ip": "192.168.89.254",
+    "xForwardedFor": "192.168.89.254"
+  },
+  "message": "blcks task [GET HOSTS] successfully.",
+  "data": {
+    "targetType": 8,
+    "hostname": "sshlogadapter-ddf4d58c5-b8d4w",
+    "pid": 27,
+    "inputParamsStr": "",
+    "msgCode": 950,
+    "errorCode": null,
+    "wfResult": "",
+    "meta": {
+      "resourceIds": []
+    },
+    "eventType": "",
+    "debug": false,
+    "exeName": "SSH 日志处理(sshlogadapter)",
+    "targets": [],
+    "type": "script"
+  },
+  "level": "warn",
+  "@timestamp": "2020-01-06T10:44:28.264573348+08:00"
+}
+
+
+{
+  "taskId" : "WF-1578278667-QOwU04_1",
+  "dateTime" : "2020-01-06T02:44:27.749142+00:00",
+  "podId" : "sshlogadapter-ddf4d58c5-b8d4w",
+  "package" : "",
+  "version" : "",
+  "component" : "",
+  "function" : "sshlogadapter:decorator",
+  "caller" : {
+    "userId" : "SuperUser",
+    "name" : "System",
+    "account" : "",
+    "callerType" : -1,
+    "iat" : 0,
+    "ip" : "192.168.89.254",
+    "xForwardedFor" : "192.168.89.254"
+  },
+  "message" : "Task [START JAEGER] started",
+  "data" : {
+    "targetType" : 8,
+    "hostname" : "sshlogadapter-ddf4d58c5-b8d4w",
+    "pid" : 27,
+    "inputParamsStr" : "{\"args\": [], \"kwargs\": {}}",
+    "msgCode" : 950,
+    "errorCode" : null,
+    "wfResult" : "",
+    "meta" : {
+      "resourceIds" : [ ]
+    },
+    "eventType" : "",
+    "debug" : false,
+    "exeName" : "sshlogadapter",
+    "targets" : [ ],
+    "type" : "script"
+  },
+  "level" : "info",
+  "@timestamp" : "2020-01-06T10:44:28.264062522+08:00"
+}
