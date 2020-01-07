@@ -2,13 +2,13 @@
 # misc log examples
 ################################################
  
-# not product log
+# 1. debug
 {
    "level": "debug",
    "message": "for debugging"
 }
 
-# product log
+# 2. exception
 {
    "taskId": "WF-1570504132-zdpyYr",
    "dateTime": "2019-10-08T05:32:34.231Z",
@@ -32,7 +32,7 @@
    }
 }
 
-# not product log
+# 3. debug
 {
    "level": "debug",
    "message": "for debugging",
@@ -41,7 +41,7 @@
    }
 }
 
-# product log
+# 4. cloud event log
 {
    "taskId": "WF-1570504132-zdpyYr",
    "dateTime": "2019-10-08T05:32:34.231Z",
@@ -65,7 +65,7 @@
    }
 }
 
-# not product log
+# 5. undefined log
 {
    "taskId": "WF-1570504132-zdpyYr",
    "dateTime": "2019-10-08T05:32:34.231Z",
