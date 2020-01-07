@@ -1,16 +1,16 @@
 # Dictionary for mapping rules
-## 作法
+## 目錄
 
 ### json rules (/rules)
-- 定義需要匹配的產品日誌
-- 每則 rule 需要一個對應的 msgCode
-- 可以多則 rules 對應同一個 msgCode
+- 產品日誌的匹配規則，以檔名分類
+- 比對順序依照 priority 大小設定
 
 ### message 與 i18n (/i18n)
 - msgCode 與 message template 的 mapping table
 
-### 替換 level
-預設為 raw log 的 level， 如果要改，則在 event params 增加 level 欄位，範例如下
+## json rules 參數說明
+### level
+如果要修改 prod log 的 level，在 event params 增加 level 欄位，範例如下:
 ```
       "event": {
         "type": "tagging",
@@ -21,7 +21,7 @@
       }
 ```
 
-### 設定 realtime message
+### realtime 
 預設不是 realtime message，如果要設成 realtime message，則設定 realtime = "true"
 ```
       "event": {
@@ -33,8 +33,8 @@
       }
 ```
 
-### 設定 prod log
-預設是 prod log，如果要設成非 prod log，則設定 prod = "false"
+### prod
+預設輸出是 product log，如果要設成非 product log，則設定 prod = "false"
 ```
       "event": {
         "type": "tagging",
@@ -45,7 +45,10 @@
       }
 ```
 
-### 多條 rules 的匹配順序
+### msgCode
+以 msgCode 對應到 i18n 的 message template
+
+### priority
 多筆 rules 匹配時，會依照 priority 比對，只要有一筆比對成功，後面就不會再比對。
 ```
       "event": {
@@ -58,7 +61,9 @@
 ```
 
 ## transform
-- assetId 轉 assetName
+transformer 會新增以下欄位
+- assetId
+- assetName
 - targetType
 - targetTypeName
 - project
@@ -95,8 +100,8 @@
       }
     ]
   },
-  "assetType": "host",
-  "assetTypeName": "服務器",
+  "targetType": "host",
+  "targetTypeName": "服務器",
   "assetId": "S-dk0p08kqc",
   "assetName": "host-1234",
   "project": [
