@@ -34,11 +34,11 @@ exports.transform = function (msgCode, fact)
 {
    for (var prop in fact) {
       if (assetKeys.includes(prop)) {
-          fact.assetType = Object.keys(fact[prop])[0];
-          fact.assetTypeName = i18next.t(fact.assetType);
-          fact.assetId = fact[prop][fact.assetType][0].id;
+          fact.targetType = Object.keys(fact[prop])[0];
+          fact.targetTypeName = i18next.t(fact.targetType);
+          fact.assetId = fact[prop][fact.targetType][0].id;
           fact.assetName = "host-1234";
-          fact.project = fact[prop][fact.assetType][0].project;
+          fact.project = fact[prop][fact.targetType][0].project;
       }
    }
    fact.msgLocale = i18next.t(msgCode, fact);
