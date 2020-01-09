@@ -162,8 +162,14 @@
    },
    "message": "assetCreated: host",  
    "assetCreated": {
-     "host": [{
+     "type": "host",
+     "elements": [{
        "id": "S-dk0p08kqc",
+       "name": "host-1",
+       "project":  ["PJ-dk1ha57i4", "PJ-dk1ha57i4"]
+      }, {
+       "id": "S-dk0p08kqb",
+       "name": "host-2",
        "project":  ["PJ-dk1ha57i4", "PJ-dk1ha57i4"]
      }] 
    }

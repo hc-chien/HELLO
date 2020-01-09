@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "i18next": "^19.0.2",
+    "i18next": "^19.0.3",
     "json-rules-engine": "^5.0.0",
     "ramda": "^0.26.1",
     "require-all": "^3.0.0"
