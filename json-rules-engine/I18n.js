@@ -57,7 +57,7 @@ exports.transform = function (msgCode, fact)
           */
           fact.targetType = fact[prop]['type'];
           fact.targetTypeName = i18next.t(fact.targetType);
-          fact.elements = fact[prop]['elements'];
+          fact.targets = fact[prop]['elements'];
       }
    }
    fact.msgLocale = i18next.t(msgCode, fact);
