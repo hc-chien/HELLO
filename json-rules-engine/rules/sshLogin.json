@@ -11,9 +11,10 @@
             "path": "$.sshInfo"
           },
           {
-            "fact": "level",
+            "fact": "data",
             "operator": "equal",
-            "value": "info"
+             "value": 1400,
+             "path": "$.msgCode"
           }
         ]
       },
@@ -21,24 +22,26 @@
         "type": "tagging",
         "params": {
           "tag": "product",
+          "level": "info",
           "msgCode": "sshLogin"
         }
       }
     },
     {
-      "name": "sshLogin2",
+      "name": "sshLoginDirect",
       "conditions": {
         "all": [
           {
-            "fact": "function",
-            "operator": "equal",
-            "value": "sshlogadapter:wrapper"
+            "fact": "data",
+            "operator": "exist",
+            "value": true,
+            "path": "$.sshInfo"
           },
           {
             "fact": "data",
             "operator": "equal",
-            "value": false,
-            "path": "$.debug"
+            "value": 1401,
+            "path": "$.msgCode"
           }
         ]
       },
@@ -46,7 +49,8 @@
         "type": "tagging",
         "params": {
           "tag": "product",
-          "msgCode": "message"
+          "level": "info",
+          "msgCode": "sshLoginDirect"
         }
       }
     }

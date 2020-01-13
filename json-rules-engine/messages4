@@ -79,3 +79,58 @@
   "level" : "info",
   "@timestamp" : "2020-01-06T10:44:28.264062522+08:00"
 }
+
+{
+    "taskId": "WF-1578649304-fJ8UEP_1",
+    "dateTime": "2020-01-10T09:41:47.462444+00:00",
+    "podId": "sshlogadapter-6dd689f747-n72wz",
+    "package": "",
+    "version": "",
+    "component": "",
+    "function": "sshlogadapter:process",
+    "caller": {
+      "userId": "SuperUser",
+      "name": "System",
+      "account": "",
+      "callerType": -1,
+      "iat": 0,
+      "ip": "192.168.89.254",
+      "xForwardedFor": "192.168.89.254"
+    },
+    "message": "invalid host id",
+    "data": {
+      "targetType": 2,
+      "hostname": "sshlogadapter-6dd689f747-n72wz",
+      "pid": 26,
+      "inputParamsStr": "",
+      "msgCode": 1401,
+      "errorCode": null,
+      "wfResult": "",
+      "meta": {
+        "projectIds": [
+          "PJ-ck47s1ywd"
+        ],
+        "projectNames": []
+      },
+      "eventType": "",
+      "debug": false,
+      "exeName": "centos7(S-ck57xffuj)[192.168.89.238:22]",
+      "targets": [
+        {
+          "id": "S-ck57xffuj",
+          "name": ""
+        }
+      ],
+      "type": "script",
+      "sshRecPath": "network.pentium.sshrec.log/64/64b8b2fcb14decbc151568993a3dfa20/20200110/1578649301.027404677.root.log",
+      "sshInfo": {
+        "loginUser": "root",
+        "srcIp": "192.168.89.42",
+        "destIp": "192.168.89.238",
+        "port": 22,
+        "recPath": "network.pentium.sshrec.log/64/64b8b2fcb14decbc151568993a3dfa20/20200110/1578649301.027404677.root.log"
+      }
+    },
+    "level": "debug",
+    "@timestamp": "2020-01-10T17:41:47.632355658+08:00"
+  }
