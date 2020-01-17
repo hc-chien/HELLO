@@ -3,11 +3,16 @@
     {
       "name": "rbacRoleCreated",
       "conditions": {
-        "any": [
+        "all": [
           {
             "fact": "rbacRoleCreated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -19,13 +24,41 @@
       }
     },
     {
+      "name": "rbacRoleCreateFailed",
+      "conditions": {
+        "all": [
+          {
+            "fact": "rbacRoleCreated",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacRoleCreateFailed"
+        }
+      }
+    },
+    {
       "name": "rbacRoleUpdated",
       "conditions": {
-        "any": [
+        "all": [
           {
             "fact": "rbacRoleUpdated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -37,13 +70,41 @@
       }
     },
     {
-      "name": "rbacRoleUpdated",
+      "name": "rbacRoleUpdateFailed",
       "conditions": {
-        "any": [
+        "all": [
+          {
+            "fact": "rbacRoleUpdated",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacRoleUpdateFailed"
+        }
+      }
+    },
+    {
+      "name": "rbacRoleDeleted",
+      "conditions": {
+        "all": [
           {
             "fact": "rbacRoleDeleted",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -51,6 +112,29 @@
         "type": "tagging",
         "params": {
           "messageTag": "rbacRoleDeleted"
+        }
+      }
+    },
+    {
+      "name": "rbacRoleDeleteFailed",
+      "conditions": {
+        "all": [
+          {
+            "fact": "rbacRoleDeleted",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "rbacRoleDeleteFailed"
         }
       }
     }

@@ -3,11 +3,16 @@
     {
       "name": "rbacUserCreated",
       "conditions": {
-        "any": [
+        "all": [
           {
             "fact": "rbacUserCreated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -19,13 +24,41 @@
       }
     },
     {
+      "name": "rbacUserCreateFailed",
+      "conditions": {
+        "all": [
+          {
+            "fact": "rbacUserCreated",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacUserCreateFailed"
+        }
+      }
+    },
+    {
       "name": "rbacUserUpdated",
       "conditions": {
-        "any": [
+        "all": [
           {
             "fact": "rbacUserUpdated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -37,13 +70,41 @@
       }
     },
     {
-      "name": "rbacUserUpdated",
+      "name": "rbacUserUpdateFailed",
       "conditions": {
-        "any": [
+        "all": [
+          {
+            "fact": "rbacUserUpdated",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacUserUpdateFailed"
+        }
+      }
+    },
+    {
+      "name": "rbacUserDeleted",
+      "conditions": {
+        "all": [
           {
             "fact": "rbacUserDeleted",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -51,6 +112,29 @@
         "type": "tagging",
         "params": {
           "messageTag": "rbacUserDeleted"
+        }
+      }
+    },
+    {
+      "name": "rbacUserDeleteFailed",
+      "conditions": {
+        "all": [
+          {
+            "fact": "rbacUserDeleted",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "rbacUserDeleteFailed"
         }
       }
     }

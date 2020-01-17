@@ -3,11 +3,16 @@
     {
       "name": "rbacProjectCreated",
       "conditions": {
-        "any": [
+        "all": [
           {
             "fact": "rbacProjectCreated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -19,13 +24,41 @@
       }
     },
     {
+      "name": "rbacProjectCreateFailed",
+      "conditions": {
+        "all": [
+          {
+            "fact": "rbacProjectCreated",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacProjectCreateFailed"
+        }
+      }
+    },
+    {
       "name": "rbacProjectUpdated",
       "conditions": {
-        "any": [
+        "all": [
           {
             "fact": "rbacProjectUpdated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -37,13 +70,41 @@
       }
     },
     {
-      "name": "rbacProjectUpdated",
+      "name": "rbacProjectUpdateFailed",
       "conditions": {
-        "any": [
+        "all": [
+          {
+            "fact": "rbacProjectUpdated",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacProjectUpdateFailed"
+        }
+      }
+    },
+    {
+      "name": "rbacProjectDeleted",
+      "conditions": {
+        "all": [
           {
             "fact": "rbacProjectDeleted",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -51,6 +112,29 @@
         "type": "tagging",
         "params": {
           "messageTag": "rbacProjectDeleted"
+        }
+      }
+    },
+    {
+      "name": "rbacProjectDeleteFailed",
+      "conditions": {
+        "all": [
+          {
+            "fact": "rbacProjectDeleted",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "rbacProjectDeleteFailed"
         }
       }
     }

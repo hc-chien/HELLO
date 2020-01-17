@@ -1,0 +1,47 @@
+{
+  "idname": "{{name}} ({{id}})",
+  "seperator": ", ",
+  "message": "{{message}}",
+  
+  "targetStr":"{{targets, idname,seperator}}",
+  "xxx": "添加{{targetTypeName}}: $t(targetStr)",
+
+  "assetCreated": "添加{{targetTypeName}}:$t(targetStr) 成功",
+  "assetCreateFailed": "添加{{targetTypeName}}:$(targetStr) 添加失敗 (原因:{{message}})",
+  "assetUpdate": "修改{{targetTypeName}}:$t(targetStr) 成功",
+  "assetUpdateFailed": "修改{{targetTypeName}}:$t(targetStr) 修改失敗 (原因:{{message}})",
+  "assetDeleted": "刪除{{targetTypeName}}:$t(targetStr) 成功",
+  "assetDeleteFailed": "刪除{{targetTypeName}}:$t(targetStr) 刪除失敗 (原因:{{message}})",
+  "errorRaised": "Exception (原因:{{message}})",
+
+  "sshLogin": "[ {{caller.name}} ] 使用[ {{data.sshInfo.loginUser}} ] 透過運維平台登入在項目[ {{data.meta.projectNames}} ] 底下的服務器: {{data.targets.0.id}} 成功",
+  "sshLoginDirect": "[ {{data.sshInfo.srcIp}} ] 使用[ {{data.sshInfo.loginUser}} ] 直連方式登入在项目[ {{data.meta.projectNames.0}} ] 底下的服務器: {{data.targets.0.id}} 成功",
+
+  "rbacProjectCreated": "添加{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacProjectCreateFailed": "添加{{targetTypeName}}:$t(targetStr) 添加失敗 (原因:{{message}})",
+  "rbacProjectUpdated": "修改{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacProjectUpdateFailed": "修改{{targetTypeName}}:$t(targetStr) 修改失敗 (原因:{{message}})",
+  "rbacProjectDeleted": "刪除{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacProjectDeleteFailed": "刪除{{targetTypeName}}:$t(targetStr) 刪除失敗 (原因:{{message}})",
+
+  "rbacPolicyCreated": "添加{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacPolicyCreateFailed": "添加{{targetTypeName}}:$t(targetStr) 添加失敗 (原因:{{message}})",
+  "rbacPolicyUpdated": "修改{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacPolicyUpdateFailed": "修改{{targetTypeName}}:$t(targetStr) 修改失敗 (原因:{{message}})",
+  "rbacPolicyDeleted": "刪除{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacPolicyDeleteFailed": "刪除{{targetTypeName}}:$t(targetStr) 刪除失敗 (原因:{{message}})",
+
+  "rbacRoleCreated": "添加{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacRoleCreateFailed": "添加{{targetTypeName}}:$t(targetStr) 添加失敗 (原因:{{message}})",
+  "rbacRoleUpdated": "修改{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacRoleUpdateFailed": "修改{{targetTypeName}}:$t(targetStr) 修改失敗 (原因:{{message}})",
+  "rbacRoleDeleted": "刪除{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacRoleDeleteFailed": "刪除{{targetTypeName}}:$t(targetStr) 刪除失敗 (原因:{{message}})",
+
+  "rbacUserCreated": "添加{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacUserCreateFailed": "添加{{targetTypeName}}:$t(targetStr) 添加失敗 (原因:{{message}})",
+  "rbacUserUpdated": "修改{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacUserUpdateFailed": "修改{{targetTypeName}}:$t(targetStr) 修改失敗 (原因:{{message}})",
+  "rbacUserDeleted": "刪除{{targetTypeName}}:$t(targetStr) 成功",
+  "rbacUserDeleteFailed": "刪除{{targetTypeName}}:$t(targetStr) 刪除失敗 (原因:{{message}})"
+}

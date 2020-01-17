@@ -9,12 +9,15 @@
     "function": "getPolicies",
     "taskId": "B9dyKw-1579053576334",
     "dateTime": 1579053576478,
-    "rbacPolicyCreated": {
+    "xxx": {
       "projectIds": [
         "P-PUBLIC",
         "P-SUPERADMIN"
       ]
     },
+    "targets": [
+        {"id":"123","name":"456"}
+    ],
     "msg": "",
     "time": "2020-01-15T01:59:36.478Z",
     "v": 0,

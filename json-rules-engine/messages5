@@ -1,0 +1,114 @@
+{
+    "taskId": "WF-1578899784-GaeUtU_1",
+    "dateTime": "2020-01-13T07:16:25.393855+00:00",
+    "podId": "sshlogadapter-6dd689f747-n72wz",
+    "package": "",
+    "version": "",
+    "component": "",
+    "function": "sshlogadapter:decorator",
+    "caller": {
+      "userId": "system1",
+      "name": "预设管理员",
+      "account": "",
+      "callerType": -1,
+      "iat": 0,
+      "ip": "192.168.89.254",
+      "xForwardedFor": "192.168.89.254"
+    },
+    "message": "Gateone Log",
+    "data": {
+      "targetType": 2,
+      "hostname": "sshlogadapter-6dd689f747-n72wz",
+      "pid": 25,
+      "inputParamsStr": "{\"resource_id\": \"S-dk57squ9x\", \"resource_name\": \"89.238\", \"user_id\": \"system1\", \"user_name\": \"\\u9884\\u8bbe\\u7ba1\\u7406\\u5458\", \"project_ids\": [\"PJ-ck4mhdd73\"]}",
+      "msgCode": 1400,
+      "errorCode": null,
+      "wfResult": "",
+      "meta": {
+        "projectIds": [
+          "PJ-ck4mhdd73"
+        ],
+        "projectNames": [
+          "tunnel"
+        ]
+      },
+      "eventType": "",
+      "debug": false,
+      "exeName": "89.238(S-dk57squ9x)[192.168.89.238:22]",
+      "targets": [
+        {
+          "id": "S-dk57squ9x",
+          "name": ""
+        }
+      ],
+      "type": "script",
+      "sshRecPath": "network.pentium.sshrec.log/64/64b8b2fcb14decbc151568993a3dfa20/20200113/1578899781.798250194.root.log",
+      "sshInfo": {
+        "loginUser": "root",
+        "srcIp": "192.168.89.93",
+        "destIp": "192.168.89.238",
+        "port": "22",
+        "recPath": "network.pentium.sshrec.log/64/64b8b2fcb14decbc151568993a3dfa20/20200113/1578899781.798250194.root.log"
+      }
+    },
+    "level": "debug",
+    "@timestamp": "2020-01-13T15:16:26.029566077+08:00"
+}
+
+
+{
+    "taskId": "WF-1578899769-H6UtSK_1",
+    "dateTime": "2020-01-13T07:16:10.183813+00:00",
+    "podId": "sshlogadapter-6dd689f747-n72wz",
+    "package": "",
+    "version": "",
+    "component": "",
+    "function": "sshlogadapter:process",
+    "caller": {
+      "userId": "SuperUser",
+      "name": "System",
+      "account": "",
+      "callerType": -1,
+      "iat": 0,
+      "ip": "192.168.89.254",
+      "xForwardedFor": "192.168.89.254"
+    },
+    "message": "Invalid HashType",
+    "data": {
+      "targetType": 2,
+      "hostname": "sshlogadapter-6dd689f747-n72wz",
+      "pid": 27,
+      "inputParamsStr": "",
+      "msgCode": 1401,
+      "errorCode": null,
+      "wfResult": "",
+      "meta": {
+        "projectIds": [
+          "PJ-ck4mhdd73"
+        ],
+        "projectNames": [
+          "tunnel"
+        ]
+      },
+      "eventType": "",
+      "debug": false,
+      "exeName": "89.238(S-dk57squ9x)[192.168.89.238:22]",
+      "targets": [
+        {
+          "id": "S-dk57squ9x",
+          "name": ""
+        }
+      ],
+      "type": "script",
+      "sshRecPath": "network.pentium.sshrec.log/64/64b8b2fcb14decbc151568993a3dfa20/20200113/1578899766.353115105.root.log",
+      "sshInfo": {
+        "loginUser": "root",
+        "srcIp": "192.168.88.136",
+        "destIp": "192.168.89.238",
+        "port": "22",
+        "recPath": "network.pentium.sshrec.log/64/64b8b2fcb14decbc151568993a3dfa20/20200113/1578899766.353115105.root.log"
+      }
+    },
+    "level": "debug",
+    "@timestamp": "2020-01-13T15:16:11.027826786+08:00"
+}

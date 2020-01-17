@@ -3,11 +3,16 @@
     {
       "name": "rbacPolicyCreated",
       "conditions": {
-        "any": [
+        "all": [
           {
             "fact": "rbacPolicyCreated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -19,13 +24,41 @@
       }
     },
     {
+      "name": "rbacPolicyCreateFailed",
+      "conditions": {
+        "all": [
+          {
+            "fact": "rbacPolicyCreated",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacPolicyCreateFailed"
+        }
+      }
+    },
+    {
       "name": "rbacPolicyUpdated",
       "conditions": {
-        "any": [
+        "all": [
           {
             "fact": "rbacPolicyUpdated",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -37,13 +70,41 @@
       }
     },
     {
-      "name": "rbacPolicyUpdated",
+      "name": "rbacPolicyUpdateFailed",
       "conditions": {
-        "any": [
+        "all": [
+          {
+            "fact": "rbacPolicyUpdated",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "msgCode": "rbacPolicyUpdateFailed"
+        }
+      }
+    },
+    {
+      "name": "rbacPolicyDeleted",
+      "conditions": {
+        "all": [
           {
             "fact": "rbacPolicyDeleted",
             "operator": "exist",
             "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "info"
           }
         ]
       },
@@ -51,6 +112,29 @@
         "type": "tagging",
         "params": {
           "messageTag": "rbacPolicyDeleted"
+        }
+      }
+    },
+    {
+      "name": "rbacPolicyDeleteFailed",
+      "conditions": {
+        "all": [
+          {
+            "fact": "rbacPolicyDeleted",
+            "operator": "exist",
+            "value": true
+          },
+          {
+            "fact": "level",
+            "operator": "equal",
+            "value": "error"
+          }
+        ]
+      },
+      "event": {
+        "type": "tagging",
+        "params": {
+          "messageTag": "rbacPolicyDeleteFailed"
         }
       }
     }
