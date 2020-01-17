@@ -4,19 +4,30 @@ const requireAll = require('require-all');
 const path = require('path');
 const i18next = require('i18next');
 
+/*
 const i18nList = requireAll({
   dirname: path.join(__dirname, 'i18n'),
   filter: /.+\.json$/,
   recursive: true,
 });
-
 var resources = {};
 R.mapObjIndexed((value, key) => {
    Object.assign(resources, value);
 }, i18nList);
+console.log(resources);
+*/
+
+const pkg = requireAll({
+  dirname: path.join(__dirname, 'i18n'),
+  filter: /.+\.json$/,
+  recursive: true,
+  map: name => name.replace(/\.json$/, ''),
+});
+
+// console.log(pkg);
 
 i18next.init({
-  lng: 'zh-TW',
+  lng: 'zh-CN',
   debug: false,
   interpolation: {
       format: function(value, format, lng) {
@@ -33,12 +44,18 @@ i18next.init({
       }
   },
   resources: {
+    default: pkg,
+  }
+/*
+  resources: {
       'zh-TW': {
         translation: resources
       }
     }
-  }, function(err, t) {
+*/
+}, function(err, t) {
 });
+
 
 var assetKeys = ['assetCreated', 'assetUpdated', 'assetDeleted', 'assetRead'];
 var errorKeys = ['errorRaised'];

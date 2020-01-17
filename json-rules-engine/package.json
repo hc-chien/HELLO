@@ -10,6 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "i18next": "^19.0.3",
+    "i18next-chained-backend": "^2.0.1",
+    "i18next-localstorage-backend": "^3.0.0",
+    "i18next-node-fs-backend": "^2.1.3",
+    "i18next-xhr-backend": "^3.2.2",
     "json-rules-engine": "^5.0.0",
     "ramda": "^0.26.1",
     "require-all": "^3.0.0"

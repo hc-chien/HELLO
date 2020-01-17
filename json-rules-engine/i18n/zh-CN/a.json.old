@@ -1,0 +1,9 @@
+{
+  "a": "hello {{elements, 'id, name'}}) world",
+}
+
+  "elements": "{{id}} ({{name}})",
+  "a0": "hello \"{{elementList}} \" world",
+  "a": "hello {{elementList}} world",
+  "arrayJoin": "hello {{gg, joinArrays:'+' }} world"
+}
