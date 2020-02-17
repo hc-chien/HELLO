@@ -6,7 +6,7 @@
 - 比對順序依照 priority 大小設定
 
 ### message 與 i18n (/i18n)
-- msgCode 與 message template 的 mapping table
+- msgTemplateId 與 message template 的 mapping table
 
 ## json rules 參數說明
 ### level
@@ -15,7 +15,7 @@
       "event": {
         "type": "tagging",
         "params": {
-          "msgCode": "assetCreated",
+          "msgTemplateId": "assetCreated",
           "level": "info"
         }
       }
@@ -27,7 +27,7 @@
       "event": {
         "type": "tagging",
         "params": {
-          "msgCode": "assetCreated",
+          "msgTemplateId": "assetCreated",
           "realtime": "true"
         }
       }
@@ -39,14 +39,14 @@
       "event": {
         "type": "tagging",
         "params": {
-          "msgCode": "assetCreated",
+          "msgTemplateId": "assetCreated",
           "prod": "false"
         }
       }
 ```
 
-### msgCode
-以 msgCode 對應到 i18n 的 message template
+### msgTemplateId
+以 msgTemplateId 對應到 i18n 的 message template
 
 ### priority
 多筆 rules 匹配時，會依照 priority 比對，只要有一筆比對成功，後面就不會再比對。
@@ -54,7 +54,7 @@
       "event": {
         "type": "tagging",
         "params": {
-          "msgCode": "assetCreated",
+          "msgTemplateId": "assetCreated",
         }
       },
       "priority": 2
@@ -108,6 +108,6 @@ transformer 會新增以下欄位
     "PJ-dk1ha57i4",
     "PJ-dk1ha57i4"
   ],
-  "msgLocale": "添加服務器:host-1234 (S-dk0p08kqc) 成功"
+  "tmsg": "添加服務器:host-1234 (S-dk0p08kqc) 成功"
 }
 ```
